@@ -1,0 +1,18 @@
+{
+    "name": "Stein, Schere, Papier",
+    "objects": ["ein Stein", "die Schere", "das Papier"],
+    "results": ["Sieg", "Verlieren", "Zeichnen"],
+    "bot": {
+        "choice": "Bot wählt",
+        "have": "Bot hätten"
+    },
+    "message": {
+        "requests": {
+            "choice": "die Wahl: ",
+            "play": {
+                "request": "Spielen wir?(ja/nein)",
+                "arguments": ["ja", "nein"]
+            }
+        }
+    }
+}

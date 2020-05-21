@@ -1,53 +1,63 @@
 import random     # для бота
 import time       # для эффекта выбора ботом числа
+import json
+from colorama import init, Fore, Back, Style
+from termcolor import colored
 
-print('КАМЕНЬ-НОЖНИЦЫ-БУМАГА')
+init()
 
-print('---------------------')
-print('------НАЧАТЬ(1)------')
-print('---------------------')
+lang = input('You language? (de, en, ru) ')
 
-q = int(input())
+if lang == "de" or lang == "en" or lang == "ru":
+    with open("./locale/" + lang + ".json", encoding="utf-8") as locale_file:
+        locale = json.load(locale_file)
 
-while q == 1:    # начало игры
+spaces = ""
+for i in range(len(locale["name"]) + 2):
+    spaces += " "
 
-    print('---------------------')
-    print('------КАМЕНЬ(1)------')
-    print('-----НОЖНИЦЫ(2)------')
-    print('------БУМАГА(3)------')
-    print('---------------------')
+print(Back.BLUE + spaces + Back.BLACK)
+print(Back.BLUE + " " + locale["name"] + " " + Back.BLACK)
+print(Back.BLUE + spaces + Back.BLACK)
 
-    player = int(input('Выбор: '))   # выбор игрока
-    print('BOT выбирает...')
+while True == 1:    # начало игры
+
+    print('1. ' + locale["objects"][0])
+    print('2. ' + locale["objects"][1])
+    print('3. ' + locale["objects"][2])
+
+    player = int(input(locale["message"]["requests"]["choice"])) - 1
+    print()
+
+    print(locale["bot"]["choice"])
+    print()
+
     time.sleep(2)
-    bot = random.randint(1, 3)       # "выбор" бота
+    bot = random.randint(0, 2)       # "выбор" бота
 
-    if bot == 1 and player == 3:
-     print('У бота был камень. Вы победили!')
-    if bot == 1 and player == 2:
-     print('У бота был камень. Вы проиграли!')
-    if bot == 1 and player == 1:
-     print('У бота был камень. Ничья!')
+    if bot == 0:
+        if player == 2:
+            print(Fore.RED + " " + locale["results"][1] + "!" + Fore.WHITE + " " + locale["bot"]["have"] + " " + locale["objects"][bot])
+        if player == 1:
+            print(Fore.GREEN + " " + locale["results"][0] + "!" + Fore.WHITE + " " + locale["bot"]["have"] + " " + locale["objects"][bot])
+        if player == 0:
+            print(Fore.YELLOW + " " + locale["results"][2] + "!" + Fore.WHITE + " " + locale["bot"]["have"] + " " + locale["objects"][bot])
+    if bot == 1:
+        if player == 2:
+            print(Fore.GREEN + " " + locale["results"][0] + "!" + Fore.WHITE + " " + locale["bot"]["have"] + " " + locale["objects"][bot])
+        if player == 1:
+            print(Fore.YELLOW + " " + locale["results"][2] + "!" + Fore.WHITE + " " + locale["bot"]["have"] + " " + locale["objects"][bot])
+        if player == 0:
+            print(Fore.RED + " " + locale["results"][1] + "!" + Fore.WHITE + " " + locale["bot"]["have"] + " " + locale["objects"][bot])
+    if bot == 2:
+        if player == 2:
+            print(Fore.YELLOW + " " + locale["results"][2] + "!" + Fore.WHITE + " " + locale["bot"]["have"] + " " + locale["objects"][bot])
+        if player == 1:
+            print(Fore.GREEN + " " + locale["results"][0] + "!" + Fore.WHITE + " " + locale["bot"]["have"] + " " + locale["objects"][bot])
+        if player == 0:
+            print(Fore.RED + " " +locale["results"][1] + "!" + Fore.WHITE + " " + locale["bot"]["have"] + " " + locale["objects"][bot])
 
-    if bot == 2 and player == 3:
-     print('У бота были ножницы. Вы проиграли!')
-    if bot == 2 and player == 2:
-     print('У бота были ножницы. Ничья!')
-    if bot == 2 and player == 1:
-     print('У бота были ножницы. Вы выиграли!')
+    print()
 
-    if bot == 3 and player == 3:
-     print('У бота была бумага. Ничья!')
-    if bot == 3 and player == 2:
-     print('У бота была бумага. Вы выиграли!')
-    if bot == 3 and player == 1:
-     print('У бота была бумага. Вы проиграли!')
-
-    print('Играть дальше?') # повторение игры
-    print('1 ДА')
-    print('2 HET')
-
-    e = int(input(''))
-    
-    if e >= 2:
+    if input(locale["message"]["requests"]["play"]["request"]) != locale["message"]["requests"]["play"]["arguments"][0]:
         break
