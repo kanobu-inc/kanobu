@@ -4,11 +4,12 @@
 |---|---------------|----------|
 | 1 | 🇷🇺 Russian    | ⚠️ beta   |
 | 2 | 🇩🇪 German     | ⚠️ beta   |
-| 3 | 🇬🇧 English    | 👍 stable |
-| 4 | 🇫🇷 French     | ❌ none   |
-| 5 | 🇪🇸 Spanish    | ❌ none   |
-| 6 | 🇯🇵 Japanese    | ❌ none  |
-| 7 | 😀 Emoji      | ❌ none   |
+| 3 | 🇺🇦 Ukrainian    | 👍 stable |
+| 4 | 🇬🇧 English    | 👍 stable |
+| 5 | 🇫🇷 French     | ❌ none   |
+| 6 | 🇪🇸 Spanish    | ❌ none   |
+| 7 | 🇯🇵 Japanese    | ❌ none  |
+| 8 | 😀 Emoji      | ❌ none   |
 ## 🧑‍💻 Installation
 To install, you must download repository and dependencies:
 ```

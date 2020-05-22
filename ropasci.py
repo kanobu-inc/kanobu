@@ -6,10 +6,10 @@ from termcolor import colored
 
 init()
 
-lang = input('Your language? (de, en, ru) ')
+lang = input('Your language? (de, en, ru, ua) ')
 
-while lang != "de" and lang != "en" and lang != "ru":
-    lang = input('Your language? (de, en, ru) ')
+while lang != "de" and lang != "en" and lang != "ru" and lang != "ua":
+    lang = input('Your language? (de, en, ru, ua) ')
 
 with open("./locale/" + lang + ".json", encoding="utf-8") as locale_file:
     locale = json.load(locale_file)
