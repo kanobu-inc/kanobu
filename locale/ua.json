@@ -10,8 +10,8 @@
         "requests": {
             "choice": "Ваш вибір: ",
             "play": {
-                "request": "Зіграти знову? (y/n) ",
-                "arguments": ["y", "n"]
+                "request": "Зіграти знову? (т/н) ",
+                "arguments": ["т", "н"]
             }
         }
     }
