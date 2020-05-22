@@ -13,12 +13,13 @@
 To install, you must download repository and dependencies:
 ```
 git clone https://github.com/jDan735/kanobu.git
-pip install -r requirements.txt
+cd kanobu
+pip3 install -r requirements.txt
 ```
 ## 🚀 Start
 Command to start:
 ```
-python ropasci.py
+python3 ropasci.py
 ```
 ## 🔨 Dependencies
 ### 🖌 [colorama](https://github.com/tartley/colorama)

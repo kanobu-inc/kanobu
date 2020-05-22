@@ -6,11 +6,13 @@ from termcolor import colored
 
 init()
 
-lang = input('You language? (de, en, ru) ')
+lang = input('Your language? (de, en, ru) ')
 
-if lang == "de" or lang == "en" or lang == "ru":
-    with open("./locale/" + lang + ".json", encoding="utf-8") as locale_file:
-        locale = json.load(locale_file)
+while lang != "de" and lang != "en" and lang != "ru":
+    lang = input('Your language? (de, en, ru) ')
+
+with open("./locale/" + lang + ".json", encoding="utf-8") as locale_file:
+    locale = json.load(locale_file)
 
 spaces = ""
 for i in range(len(locale["name"]) + 2):
@@ -20,7 +22,7 @@ print(Back.BLUE + spaces + Back.BLACK)
 print(Back.BLUE + " " + locale["name"] + " " + Back.BLACK)
 print(Back.BLUE + spaces + Back.BLACK)
 
-while True == 1:
+while True:
 
     print('1. ' + locale["objects"][0])
     print('2. ' + locale["objects"][1])
@@ -32,7 +34,7 @@ while True == 1:
     print(locale["bot"]["choice"])
     print()
 
-    time.sleep(2)
+    time.sleep(1)
     bot = random.randint(0, 2)
 
     if bot == 0:
