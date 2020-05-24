@@ -30,4 +30,3 @@ python3 ropasci.py dev
 ```
 ## 🔨 Dependencies
 ### 🖌 [colorama](https://github.com/tartley/colorama)
-### 📟 [termcolor](https://pypi.org/project/termcolor/)
