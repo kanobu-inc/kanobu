@@ -16,17 +16,21 @@ To install, you must download repository and dependencies:
 ```
 git clone https://github.com/jDan735/kanobu.git
 cd kanobu
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 ```
 ## 🚀 Start
-Command to start:
 ```
-python3 ropasci.py
+python ropasci.py
 ```
 ### ⚠️ Start with debug
-Command to start with debug:
 ```
-python3 ropasci.py dev
+python ropasci.py dev
 ```
+## ⚒ Build
+```
+pip install cx_Freeze
+python setup.py build
+```
+Then copy `locale` to `build/<buildapp>`
 ## 🔨 Dependencies
 ### 🖌 [colorama](https://github.com/tartley/colorama)
