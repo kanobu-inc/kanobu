@@ -1,13 +1,14 @@
+import os
 import random
 import time
-import json
-import os
+import cson
 from colorama import init, Fore, Back
+
+os.sys.path.insert(0, "./lib/")
 
 init()
 
 # Want colorama
-# Want os
 # Work if dev == True
 def log(text, space=False):
     if dev:
@@ -26,8 +27,8 @@ lang = input('Your language? (de, en, ru, ua, em) ')
 while lang != "de" and lang != "en" and lang != "ru" and lang != "ua" and lang != "em":
     lang = input('Your language? (de, en, ru, ua, em) ')
 
-with open("./locale/" + lang + ".json", encoding="utf-8") as locale_file:
-    locale = json.load(locale_file)
+with open("./locale/" + lang + ".cson", encoding="utf-8") as locale_file:
+    locale = cson.load(locale_file)
     log(locale["name"])
 
 spaces = " " * (len(locale["game"]) + 2)

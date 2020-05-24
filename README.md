@@ -34,3 +34,4 @@ python setup.py build
 Then copy `locale` to `build/<buildapp>`
 ## 🔨 Dependencies
 ### 🖌 [colorama](https://github.com/tartley/colorama)
+### 📄 [cjson](https://github.com/avakar/pycson)
