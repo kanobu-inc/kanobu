@@ -1,4 +1,4 @@
-name: "Deutschland"
+name: "Deutsch"
 game: "Stein, Schere, Papier"
 objects: ["ein Stein", "die Schere", "das Papier"]
 results: ["Sieg", "Verlieren", "Zeichnen"]
