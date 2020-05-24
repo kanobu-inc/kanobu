@@ -1,5 +1,6 @@
 {
-    "name": "Stein, Schere, Papier",
+    "name": "Deutschland",
+    "game": "Stein, Schere, Papier",
     "objects": ["ein Stein", "die Schere", "das Papier"],
     "results": ["Sieg", "Verlieren", "Zeichnen"],
     "bot": {
