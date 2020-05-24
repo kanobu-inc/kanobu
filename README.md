@@ -2,14 +2,14 @@
 ## 🗣 Localisation
 | Language      | Status    | Language    | Status   |
 |---------------|-----------|-------------|----------|
-| 🇷🇺 Russian    | ⚠️ beta   | 🇩🇪 German   | ⚠️ beta |
-| 🇺🇦 Ukrainian  | 👍 stable | 🇬🇧 English  | 👍 stable |
-| 🇫🇷 French     | ❌ none   | 🇪🇸 Spanish  | ❌ none   |
-| 🇨🇳 Chinese   | ❌ none   | 🇵🇹 Portuguese   | ❌ none   |
-| 🇵🇱 Polish     | ❌ none   | 🇮🇹 Italien  | ❌ none   |
-| 🇹🇷 Turkish   | ❌ none   | 🇸🇦 Arabien   | ❌ none   |
-| 🇰🇷 Korean     | ❌ none   | 🇮🇳 Hindi | ❌ none   |
-| 🇭🇺 Hungarian   | ❌ none   | 😀 Emoji   | ⚠️ beta   |
+| 🇷🇺 Russian    | ⚠️ beta   | 🇩🇪 German     | ⚠️ beta |
+| 🇺🇦 Ukrainian  | 👍 stable | 🇬🇧 English    | 👍 stable |
+| 🇫🇷 French     | ❌ none   | 🇪🇸 Spanish    | ❌ none   |
+| 🇨🇳 Chinese    | ❌ none   | 🇵🇹 Portuguese | ❌ none   |
+| 🇵🇱 Polish     | ❌ none   | 🇮🇹 Italien    | ❌ none   |
+| 🇹🇷 Turkish    | ❌ none   | 🇸🇦 Arabien    | ❌ none   |
+| 🇰🇷 Korean     | ❌ none   | 🇮🇳 Hindi      | ❌ none   |
+| 🇭🇺 Hungarian  | ❌ none   | 😀 Emoji     | ⚠️ beta   |
 
 ## 🧑‍💻 Installation
 To install, you must download repository and dependencies:
@@ -22,6 +22,11 @@ pip3 install -r requirements.txt
 Command to start:
 ```
 python3 ropasci.py
+```
+### ⚠️ Start with debug
+Command to start with debug:
+```
+python3 ropasci.py dev
 ```
 ## 🔨 Dependencies
 ### 🖌 [colorama](https://github.com/tartley/colorama)
