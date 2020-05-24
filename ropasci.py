@@ -18,6 +18,8 @@ def log(text, space=False):
 
 if len(os.sys.argv) > 1:
     dev = os.sys.argv[1] == "dev"
+else:
+    dev = False
 
 lang = input('Your language? (de, en, ru, ua, em) ')
 
@@ -81,5 +83,7 @@ while True:
 
     print()
 
-    if input(locale["message"]["requests"]["play"]["request"]) != locale["message"]["requests"]["play"]["arguments"][0]:
+    play = input(locale["message"]["requests"]["play"]["request"])
+
+    if play != locale["message"]["requests"]["play"]["arguments"][0]:
         break
