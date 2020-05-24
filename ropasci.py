@@ -9,7 +9,7 @@ init()
 lang = input('Your language? (de, en, ru, ua, em) ')
 
 while lang != "de" and lang != "en" and lang != "ru" and lang != "ua" and lang != "em":
-    lang = input('Your language? (de, en, ru, ua) ')
+    lang = input('Your language? (de, en, ru, ua, em) ')
 
 with open("./locale/" + lang + ".json", encoding="utf-8") as locale_file:
     locale = json.load(locale_file)
