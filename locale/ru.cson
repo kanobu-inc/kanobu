@@ -6,8 +6,7 @@ bot:
     choice: "Бот выбирает"
     have: "Бот имел"
 message:
-    requests:
-        choice: "Выбор: "
-        play:
-            request: "Играем дальше?(д/н)"
-            arguments: ["д", "н"]
+    choice: "Выбор: "
+    play:
+        request: "Играем дальше?(д/н)"
+        arguments: ["д", "н"]

@@ -6,8 +6,7 @@ bot:
 	choice: "Result:"
 	have: "Bot has chosen"
 message:
-	requests:
-		choice: "Your choice: "
-		play:
-			request: "Play again? (y/n) "
-			arguments: ["y", "n"]
+	choice: "Your choice: "
+	play:
+		request: "Play again? (y/n) "
+		arguments: ["y", "n"]

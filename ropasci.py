@@ -42,7 +42,7 @@ while True:
     for key in range(3):
         print(str(key + 1) + ". " + locale["objects"][key])
 
-    player = int(input(locale["message"]["requests"]["choice"])) - 1
+    player = int(input(locale["message"]["choice"])) - 1
     print()
 
     print(locale["bot"]["choice"])
@@ -84,7 +84,7 @@ while True:
 
     print()
 
-    play = input(locale["message"]["requests"]["play"]["request"])
+    play = input(locale["message"]["play"]["request"])
 
-    if play != locale["message"]["requests"]["play"]["arguments"][0]:
+    if play != locale["message"]["play"]["arguments"][0]:
         break
