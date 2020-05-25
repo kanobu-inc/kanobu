@@ -1,45 +1,46 @@
+import os
 import random
 import time
-import json
-import os
-from colorama import init, Fore, Back
+import cson
+from colorama import init
 
-init()
+os.sys.path.insert(0, "./lib/")
+
+from color import *
+
+# init()
 
 # Want colorama
-# Want os
 # Work if dev == True
 def log(text, space=False):
     if dev:
         if space:
-            print(Fore.YELLOW + " [DEV] " + Fore.WHITE + text)
+            print(yellow(" [DEV] ") + text)
         else:
-            print(Fore.YELLOW + "[DEV] " + Fore.WHITE + text)
+            print(yellow("[DEV] ") + text)
 
 if len(os.sys.argv) > 1:
     dev = os.sys.argv[1] == "dev"
+else:
+    dev = False
 
 lang = input('Your language? (de, en, ru, ua, em) ')
 
 while lang != "de" and lang != "en" and lang != "ru" and lang != "ua" and lang != "em":
     lang = input('Your language? (de, en, ru, ua, em) ')
 
-with open("./locale/" + lang + ".json", encoding="utf-8") as locale_file:
-    locale = json.load(locale_file)
+with open("./locale/" + lang + ".cson", encoding="utf-8") as locale_file:
+    locale = cson.load(locale_file)
     log(locale["name"])
 
-spaces = " " * (len(locale["game"]) + 2)
-
-print(Back.BLUE + spaces + Back.BLACK)
-print(Back.BLUE + " " + locale["game"] + " " + Back.BLACK)
-print(Back.BLUE + spaces + Back.BLACK)
+logo(locale["game"])
 
 while True:
 
     for key in range(3):
         print(str(key + 1) + ". " + locale["objects"][key])
 
-    player = int(input(locale["message"]["requests"]["choice"])) - 1
+    player = int(input(locale["message"]["choice"])) - 1
     print()
 
     print(locale["bot"]["choice"])
@@ -50,12 +51,17 @@ while True:
 
     # ========== SHITCODES ==========
     def win():
-        print(Fore.GREEN + " " + locale["results"][0] + "!" + Fore.WHITE + " " + locale["bot"]["have"] + " " + locale["objects"][bot])
+        print(green(" " + locale["results"][0] + "!") + " " + locale["bot"]["have"] + " " + locale["objects"][bot])
     def lose():
-        print(Fore.RED + " " + locale["results"][1] + "!" + Fore.WHITE + " " + locale["bot"]["have"] + " " + locale["objects"][bot])
+        print(red(" " + locale["results"][1] + "!") + " " + locale["bot"]["have"] + " " + locale["objects"][bot])
     def draw():
-        print(Fore.YELLOW + " " + locale["results"][2] + "!" + Fore.WHITE + " " + locale["bot"]["have"] + " " + locale["objects"][bot])
+        print(yellow(" " + locale["results"][2] + "!") + " " + locale["bot"]["have"] + " " + locale["objects"][bot])
     # ===============================
+
+    log(red("red"), True)
+    log(yellow("yellow"), True)
+    log(green("green"), True)
+    print()
 
     if bot == 0:
         if player == 2:
@@ -81,5 +87,7 @@ while True:
 
     print()
 
-    if input(locale["message"]["requests"]["play"]["request"]) != locale["message"]["requests"]["play"]["arguments"][0]:
+    play = input(locale["message"]["play"]["request"])
+
+    if play != locale["message"]["play"]["arguments"][0]:
         break
