@@ -2,7 +2,7 @@
 ## 🗣 Localisation
 | Language      | Status    | Language    | Status   |
 |---------------|-----------|-------------|----------|
-| 🇷🇺 Russian    | ⚠️ beta   | 🇩🇪 German     | ⚠️ beta |
+| 🇷🇺 Russian    | 👍 stable | 🇩🇪 German     | ⚠️ beta |
 | 🇺🇦 Ukrainian  | 👍 stable | 🇬🇧 English    | 👍 stable |
 | 🇫🇷 French     | ❌ none   | 🇪🇸 Spanish    | ❌ none   |
 | 🇨🇳 Chinese    | ❌ none   | 🇵🇹 Portuguese | ❌ none   |
