@@ -23,20 +23,19 @@ To start, run this code:
 ```
 python ropasci.py
 ```
-Also you can use option, example `python ropasci.py --dev`
 ### ⚙️ Options
 #### dev
 For get developers functions (`log`, `clog`), and logs about variables and other parameters
-#### **[PLANS]** mode
+#### 🗓 mode
 For change game mode, for create you must write you mode in `config.cson`
-#### **[PLANS]** lang
-For set default language. All languages place in `locale`
-#### **[PLANS]** test
-For test
-#### **[PLANS]** help
-For get help
+#### 🗓 lang
+For set default language. All languages placed in `locale`
+#### 🗓 test
+Show all variables, all variants of game (`win`, `lose`, `draw`), FIXME, TODO, help information
 ## ⚒ Build
 Build supported on all popular os (`Windows`, `Mac OS`, `Linux`). You can build for your platform, not other
+
+Planned building for `Windows x32` and `Ubuntu x32 xenial`
 ```
 pip install cx_Freeze
 python setup.py build
