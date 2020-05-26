@@ -1,10 +1,12 @@
-name: "Русский"
+lang:
+    name: "Русский"
+    case: ["", "и", "а"] # man, plural, woman
 game: "Камень, ножницы, бумага"
 objects: ["Камень", "Ножницы", "Бумага"]
 results: ["Победа", "Проигрыш", "Ничья"]
 bot:
     choice: "Бот выбирает"
-    have: "Бот имел"
+    have: "У бота был"
 message:
     choice: "Выбор: "
     play:

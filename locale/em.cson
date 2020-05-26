@@ -1,4 +1,6 @@
-name: "Emoji"
+lang:
+	name: "Emoji"
+	case: false
 game: "🗿✂️📄"
 objects: ["🗿", "✂️", "📄"]
 results: ["😃", "😭", "😐"]

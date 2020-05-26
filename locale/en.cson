@@ -1,4 +1,6 @@
-name: "English"
+lang:
+	name: "English"
+	case: false
 game: "Rock paper scissors"
 objects: ["Rock", "Scissors", "Paper"]
 results: ["Victory", "Loss", "Draw"]

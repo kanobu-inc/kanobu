@@ -1,4 +1,6 @@
-name: "Deutsch"
+lang:
+    name: "Deutsch"
+    case: false
 game: "Stein, Schere, Papier"
 objects: ["ein Stein", "die Schere", "das Papier"]
 results: ["Sieg", "Verlieren", "Zeichnen"]

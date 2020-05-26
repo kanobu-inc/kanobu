@@ -13,11 +13,11 @@ from color import *
 # Want colorama
 # Work if dev == True
 #REWRITE
-def log(text, leftSpace=False, rightSpace=True):
+def log(text, left=False, right=True):
     if dev:
-        leftSpace = " " if leftSpace else ""
-        rightSpace = " " if rightSpace else ""
-        
+        leftSpace = " " if left else ""
+        rightSpace = " " if right else ""
+
         print(leftSpace + yellow("[DEV]") + rightSpace + text)
 
 if len(os.sys.argv) > 1:
@@ -60,13 +60,22 @@ while True:
 
     i = 0
     for key in massive[player]:
+        a = "" if locale["lang"]["case"] == False else locale["lang"]["case"][bot]
+
+        object = locale["objects"][bot]
+        object = object if locale["lang"]["case"] == False else object.lower()
+        
         if bot == i:
+
             if i == 0:
-                print(yellow(" " + locale["results"][key] + "!") + " " + locale["bot"]["have"] + " " + locale["objects"][bot])
+                print(yellow(" " + locale["results"][key] + "!") + " " + locale["bot"]["have"] + a + " " + object)
+
             if i == 1:
-                print(green(" " + locale["results"][key] + "!") + " " + locale["bot"]["have"] + " " + locale["objects"][bot])
+                print(green(" " + locale["results"][key] + "!") + " " + locale["bot"]["have"] + a + " " + object)
+
             if i == 2:
-                print(red(" " + locale["results"][key] + "!") + " " + locale["bot"]["have"] + " " + locale["objects"][bot])
+                print(red(" " + locale["results"][key] + "!") + " " + locale["bot"]["have"] + a + " " + object)
+
         i += 1
 
     print()
