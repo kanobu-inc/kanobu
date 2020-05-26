@@ -35,3 +35,5 @@ Then copy `locale` to `build/<buildapp>`
 ## 🔨 Dependencies
 ### 🖌 [colorama](https://github.com/tartley/colorama)
 ### 📄 [cjson](https://github.com/avakar/pycson)
+## 📰 Trello
+You can subscribe to [trello](https://trello.com/b/o0ozs1XT) to get information about the new functionality
