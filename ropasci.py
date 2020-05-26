@@ -20,8 +20,15 @@ def log(text, left=False, right=True):
 
         print(leftSpace + yellow("[DEV]") + rightSpace + text)
 
+def clog(text, left=False, right=True):
+    if dev:
+        leftSpace = " " if left else ""
+        rightSpace = " " if right else ""
+
+        return leftSpace + yellow("[DEV]") + rightSpace + text
+
 if len(os.sys.argv) > 1:
-    dev = os.sys.argv[1] == "dev"
+    dev = os.sys.argv[1] == "--dev"
 else:
     dev = False
 
@@ -32,7 +39,7 @@ while lang != "de" and lang != "en" and lang != "ru" and lang != "ua" and lang !
 
 with open("./locale/" + lang + ".cson", encoding="utf-8") as locale_file:
     locale = cson.load(locale_file)
-    log(locale["name"])
+    log(locale["lang"]["name"])
 
 logo(locale["game"])
 
@@ -64,7 +71,7 @@ while True:
 
         object = locale["objects"][bot]
         object = object if locale["lang"]["case"] == False else object.lower()
-        
+
         if bot == i:
 
             if i == 0:
