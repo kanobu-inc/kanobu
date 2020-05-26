@@ -12,12 +12,16 @@ from color import *
 
 # Want colorama
 # Work if dev == True
-def log(text, space=False):
+#REWRITE
+def log(text, leftSpace=False, rightSpace=True):
     if dev:
-        if space:
-            print(yellow(" [DEV] ") + text)
-        else:
-            print(yellow("[DEV] ") + text)
+        leftSpace = ""
+        rightSpace = ""
+        if leftSpace:
+            leftSpace = " "
+        if rightSpace:
+            rightSpace = " "
+        print(leftSpace + yellow("[DEV]") + rightSpace + text)
 
 if len(os.sys.argv) > 1:
     dev = os.sys.argv[1] == "dev"
@@ -62,32 +66,32 @@ while True:
         print(yellow(" " + locale["results"][2] + "!") + " " + locale["bot"]["have"] + " " + locale["objects"][bot])
     # ===============================
 
-    log(red("red"), True)
-    log(yellow("yellow"), True)
-    log(green("green"), True)
-    print()
+    #FIXME: Rename var
+    with open("./config.cson", "r", encoding="utf-8") as config_file:
+        modes = cson.load(config_file)
+    massive = modes["standart"]
 
-    if bot == 0:
-        if player == 2:
-            lose()
-        if player == 1:
-            win()
-        if player == 0:
-            draw()
-    if bot == 1:
-        if player == 2:
-            win()
-        if player == 1:
-            draw()
-        if player == 0:
-            lose()
-    if bot == 2:
-        if player == 2:
-            draw()
-        if player == 1:
-            win()
-        if player == 0:
-            lose()
+    i = 0
+    for key in massive[player]:
+        if bot == i:
+            if i == 0:
+                print(yellow(" " + locale["results"][key] + "!") + " " + locale["bot"]["have"] + " " + locale["objects"][bot])
+            if i == 1:
+                print(green(" " + locale["results"][key] + "!") + " " + locale["bot"]["have"] + " " + locale["objects"][bot])
+            if i == 2:
+                print(red(" " + locale["results"][key] + "!") + " " + locale["bot"]["have"] + " " + locale["objects"][bot])
+        i += 1
+
+
+    # if bot == 0:
+    #     if player == 0:
+    #         draw()
+    #     if player == 1:
+    #         win()
+    #     if player == 2:
+    #         lose()
+
+
 
     print()
 
