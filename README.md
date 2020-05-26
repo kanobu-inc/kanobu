@@ -6,7 +6,7 @@
 | 🇺🇦 Ukrainian  | 👍 stable | 🇬🇧 English    | 👍 stable |
 | 🇫🇷 French     | 🗓 plans  | 🇪🇸 Spanish    | 🗓 plans |
 | 🇨🇳 Chinese    | ❌ none   | 🇵🇹 Portuguese | 🗓 plans |
-| 🇵🇱 Polish     | ❌ none   | 🇮🇹 Italien    | 🗓 plans  |
+| 🇵🇱 Polish     | 🗓 plans   | 🇮🇹 Italien    | 🗓 plans  |
 | 🇹🇷 Turkish    | ❌ none   | 🇸🇦 Arabien    | ❌ none  |
 | 🇰🇷 Korean     | ❌ none   | 🇮🇳 Hindi      | ❌ none  |
 | 🇭🇺 Hungarian  | 🗓 plans  | 😀 Emoji     | ⚠️ beta  |
