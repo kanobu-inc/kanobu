@@ -10,5 +10,5 @@ bot:
 message:
     choice: "die Wahl: "
     play:
-        request: "Spielen wir?(ja/nein)"
+        request: "Spielen wir weiter?(ja/nein)"
         arguments: ["ja", "nein"]
