@@ -2,14 +2,14 @@
 ## 🗣 Localisation
 | Language      | Status    | Language    | Status   |
 |---------------|-----------|-------------|----------|
-| 🇷🇺 Russian    | 👍 stable | 🇩🇪 German     | ⚠️ beta |
+| 🇷🇺 Russian    | 👍 stable | 🇩🇪 German     | ⚠️ beta  |
 | 🇺🇦 Ukrainian  | 👍 stable | 🇬🇧 English    | 👍 stable |
-| 🇫🇷 French     | ❌ none   | 🇪🇸 Spanish    | ❌ none   |
-| 🇨🇳 Chinese    | ❌ none   | 🇵🇹 Portuguese | ❌ none   |
-| 🇵🇱 Polish     | ❌ none   | 🇮🇹 Italien    | ❌ none   |
-| 🇹🇷 Turkish    | ❌ none   | 🇸🇦 Arabien    | ❌ none   |
-| 🇰🇷 Korean     | ❌ none   | 🇮🇳 Hindi      | ❌ none   |
-| 🇭🇺 Hungarian  | ❌ none   | 😀 Emoji     | ⚠️ beta   |
+| 🇫🇷 French     | 🗓 plans  | 🇪🇸 Spanish    | 🗓 plans |
+| 🇨🇳 Chinese    | ❌ none   | 🇵🇹 Portuguese | 🗓 plans |
+| 🇵🇱 Polish     | ❌ none   | 🇮🇹 Italien    | 🗓 plans  |
+| 🇹🇷 Turkish    | ❌ none   | 🇸🇦 Arabien    | ❌ none  |
+| 🇰🇷 Korean     | ❌ none   | 🇮🇳 Hindi      | ❌ none  |
+| 🇭🇺 Hungarian  | 🗓 plans  | 😀 Emoji     | ⚠️ beta  |
 
 ## 🧑‍💻 Installation
 To install, you must download repository and dependencies:
