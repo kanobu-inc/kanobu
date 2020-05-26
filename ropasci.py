@@ -15,14 +15,9 @@ from color import *
 #REWRITE
 def log(text, leftSpace=False, rightSpace=True):
     if dev:
-        if leftSpace:
-            leftSpace = " "
-        else:
-            leftSpace = ""
-        if rightSpace:
-            rightSpace = " "
-        else:
-            rightSpace = ""
+        leftSpace = " " if leftSpace else ""
+        rightSpace = " " if rightSpace else ""
+        
         print(leftSpace + yellow("[DEV]") + rightSpace + text)
 
 if len(os.sys.argv) > 1:
@@ -79,4 +74,4 @@ while True:
     play = input(locale["message"]["play"]["request"])
 
     if play != locale["message"]["play"]["arguments"][0]:
-        break
+        quit()
