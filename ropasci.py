@@ -30,9 +30,7 @@ args = parser.parse_args()
 
 lang = args.lang
 
-if lang == "de" or lang == "en" or lang == "ru" or lang == "ua" or lang == "em":
-    True
-else:
+if lang != "de" and lang != "en" and lang != "ru" and lang != "ua" and lang != "em":
     lang = input('Your language? (de, en, ru, ua, em) ')
     while lang != "de" and lang != "en" and lang != "ru" and lang != "ua" and lang != "em":
         lang = input('Your language? (de, en, ru, ua, em) ')
