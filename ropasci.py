@@ -30,10 +30,10 @@ args = parser.parse_args()
 
 lang = args.lang
 
-if lang != "de" and lang != "en" and lang != "ru" and lang != "ua" and lang != "em":
-    lang = input('Your language? (de, en, ru, ua, em) ')
-    while lang != "de" and lang != "en" and lang != "ru" and lang != "ua" and lang != "em":
-        lang = input('Your language? (de, en, ru, ua, em) ')
+if lang != "de" and lang != "en" and lang != "ru" and lang != "ua" and lang != "em" and lang != "it":
+    lang = input('Your language? (de, en, ru, ua, em, it) ')
+    while lang != "de" and lang != "en" and lang != "ru" and lang != "ua" and lang != "em" and lang != "it":
+        lang = input('Your language? (de, en, ru, ua, em, it) ')
 
 with open("./locale/" + lang + ".cson", encoding="utf-8") as locale_file:
     locale = cson.load(locale_file)

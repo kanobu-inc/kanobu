@@ -4,9 +4,9 @@
 |---------------|----------|---------------|-----------|
 | 🇷🇺 Russian    | 👍 stable | 🇩🇪 German     | ⚠️ beta   |
 | 🇺🇦 Ukrainian  | 👍 stable | 🇬🇧 English    | 👍 stable |
-| 🇫🇷 French     | 🗓 plans  | 🇪🇸 Spanish    | 🗓 plans  |
+| 🇫🇷 French     | 🗓 plans  | 🇪🇸 Spanish     | 🗓 plans  |
 | 🇨🇳 Chinese    | ❌ none   | 🇵🇹 Portuguese | 🗓 plans  |
-| 🇵🇱 Polish     | 🗓 plans  | 🇮🇹 Italien    | 🗓 plans  |
+| 🇵🇱 Polish     | 🗓 plans  | 🇮🇹 Italien     | ⚠️ beta  |
 | 🇹🇷 Turkish    | ❌ none   | 🇸🇦 Arabien    | ❌ none   |
 | 🇰🇷 Korean     | ❌ none   | 🇮🇳 Hindi      | ❌ none   |
 | 🇭🇺 Hungarian  | 🗓 plans  | 😀 Emoji      | ⚠️ beta   |
