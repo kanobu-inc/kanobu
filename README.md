@@ -11,6 +11,7 @@
 | 🇰🇷 Korean     | ❌ none   | 🇮🇳 Hindi      | ❌ none   |
 | 🇭🇺 Hungarian  | 🗓 plans  | 😀 Emoji      | ⚠️ beta   |
 
+The [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code system is used to name the localization files.
 ## 🧑‍💻 Installation
 To install, you must download repository and dependencies:
 ```
