@@ -58,10 +58,12 @@ while True:
 
     time.sleep(1)
     bot = random.randint(0, 2)
-
-    with open("./config.cson", "r", encoding="utf-8") as config_file:
-        modes = cson.load(config_file)
-    massive = modes["standart"]
+    
+    massive = [
+        [2, 0, 1]
+        [1, 2, 0]
+        [0, 1, 2]
+    ]
 
     i = 0
     for key in massive[player]:

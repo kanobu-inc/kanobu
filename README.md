@@ -28,8 +28,6 @@ python ropasci.py
 ### ⚙️ Options
 #### dev
 For get developers functions (`log`, `clog`), and logs about variables and other parameters
-#### 🗓 mode
-For change game mode, for create you must write you mode in `config.cson`
 #### lang
 For set default language. All languages placed in `locale`
 #### 🗓 test
