@@ -36,6 +36,8 @@ Show all variables, all variants of game (`win`, `lose`, `draw`), FIXME, TODO, h
 Build supported on all popular os (`Windows`, `Mac OS`, `Linux`). You can build for your platform, not other
 
 Planned building for `Windows x32` and `Ubuntu x32 xenial`
+
+To build, run this code:
 ```
 pip install cx_Freeze
 python setup.py build
