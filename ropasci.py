@@ -2,40 +2,40 @@ import os
 import random
 import time
 import cson
-from colorama import init
+import argparse
 
 os.sys.path.insert(0, "./lib/")
-
 from color import *
 
-# init()
-
-# Want colorama
-# Work if dev == True
 #REWRITE
 def log(text, left=False, right=True):
-    if dev:
+    if args.dev:
         leftSpace = " " if left else ""
         rightSpace = " " if right else ""
 
         print(leftSpace + yellow("[DEV]") + rightSpace + text)
 
 def clog(text, left=False, right=True):
-    if dev:
+    if args.dev:
         leftSpace = " " if left else ""
         rightSpace = " " if right else ""
 
         return leftSpace + yellow("[DEV]") + rightSpace + text
 
-if len(os.sys.argv) > 1:
-    dev = os.sys.argv[1] == "--dev"
+parser = argparse.ArgumentParser()
+parser.add_argument("-d", "--dev", action="store_true", help="Dev mode")
+parser.add_argument("-t", "--test", action="store_true", help="Test mode")
+parser.add_argument("-l", "--lang", help="Your lang")
+args = parser.parse_args()
+
+lang = args.lang
+
+if lang == "de" or lang == "en" or lang == "ru" or lang == "ua" or lang == "em":
+    True
 else:
-    dev = False
-
-lang = input('Your language? (de, en, ru, ua, em) ')
-
-while lang != "de" and lang != "en" and lang != "ru" and lang != "ua" and lang != "em":
     lang = input('Your language? (de, en, ru, ua, em) ')
+    while lang != "de" and lang != "en" and lang != "ru" and lang != "ua" and lang != "em":
+        lang = input('Your language? (de, en, ru, ua, em) ')
 
 with open("./locale/" + lang + ".cson", encoding="utf-8") as locale_file:
     locale = cson.load(locale_file)
