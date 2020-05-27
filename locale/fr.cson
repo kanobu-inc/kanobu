@@ -1,0 +1,14 @@
+lang:
+    name: "French"
+    case: false
+game: "Pierre, ciseaux, papier"
+objects: ["Pierre", "Ciseaux", "Papier"]
+results: ["Victoire", "Perdre", "Tie"]
+bot:
+    choice: "Bot choisit"
+    have: "Le bot avait"
+message:
+    choice: "Choisissez: "
+    play:
+        request: "On continue à jouer ?(o/n)"
+        arguments: ["o", "n"]
