@@ -3,11 +3,16 @@
 ```
 🎉 Added new cli arguments
 ```
-## Changes in code
+## Work with code, docs, etc.
+### Changes in code
 ```
 🔥 Removed, deleted files, new functions
 ```
-## Minor fixes
+### Changes in documentation
+```
+📝 Changed title in README
+```
+### Fixes
 ```
 🔨 Fixed german
 ```
