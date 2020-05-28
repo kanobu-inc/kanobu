@@ -2,10 +2,10 @@ import os
 import random
 import time
 import cson
-import argparse
 
 os.sys.path.insert(0, "./lib/")
 from color import *
+import args
 
 #REWRITE
 def log(text, left=False, right=True):
@@ -22,12 +22,9 @@ def clog(text, left=False, right=True):
 
         return leftSpace + yellow("[DEV]") + rightSpace + text
 
-parser = argparse.ArgumentParser()
-parser.add_argument("-d", "--dev", action="store_true", help="Dev mode")
-parser.add_argument("-t", "--test", action="store_true", help="Test mode")
-parser.add_argument("-l", "--lang", help="Your lang")
-args = parser.parse_args()
+import args
 
+args = args.get()
 lang = args.lang
 
 if lang != "de" and lang != "en" and lang != "ru" and lang != "ua" and lang != "em" and lang != "it" and lang != "fr":
@@ -58,10 +55,10 @@ while True:
 
     time.sleep(1)
     bot = random.randint(0, 2)
-    
+
     massive = [
-        [2, 0, 1]
-        [1, 2, 0]
+        [2, 0, 1],
+        [1, 2, 0],
         [0, 1, 2]
     ]
 
