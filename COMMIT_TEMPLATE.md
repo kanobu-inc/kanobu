@@ -13,6 +13,11 @@
 📝 Changed title in README
 ```
 ### Fixes
+#### In locales (change flag emoji)
 ```
-🔨 Fixed german
+🔨🇩🇪 Fixed german
+```
+#### In code
+```
+🔨📝 Fixed logs
 ```
