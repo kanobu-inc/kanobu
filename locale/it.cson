@@ -1,5 +1,5 @@
 lang:
-    name: "Italien"
+    name: "Italian"
     case: false
 game: "Sasso, forbici, carta"
 objects: ["Sasso", "Forbici", "Carta"]
