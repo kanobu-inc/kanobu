@@ -39,10 +39,10 @@ Planned building for `Windows x32` and `Ubuntu x32 xenial`
 
 To build, run this code:
 ```
-pip install cx_Freeze
-python setup.py build
+pip install pyinstaller
+pyinstaller kanobu.py --onefile
 ```
-Then copy `locale` to `build/<app>`
+Then copy all files without `kanobu.py` to `dist`
 ## 🔨 Dependencies
 ### 🖌 [colorama](https://github.com/tartley/colorama)
 Simple cross-platform colored terminal text in Python. Support `cmd`, `bash`
