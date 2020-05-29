@@ -23,7 +23,7 @@ pip install -r requirements.txt
 ## 🚀 Start
 To start, run this code:
 ```
-python ropasci.py
+python kanobu.py
 ```
 ### ⚙️ Options
 #### dev
