@@ -109,4 +109,4 @@ while True:
     play = input(locale["message"]["play"]["request"])
 
     if play != locale["message"]["play"]["arguments"][0]:
-        quit()
+        break
