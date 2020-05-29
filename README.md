@@ -27,7 +27,7 @@ python kanobu.py
 ```
 ### ⚙️ Options
 #### dev
-For get developers functions (`log`, `clog`), and logs about variables and other parameters
+To get developers functions (`log`, `clog`), and logs about variables and other parameters
 #### lang
 For set default language. All languages placed in `locale`
 #### 🗓 test
