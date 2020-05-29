@@ -2,10 +2,29 @@ import os
 import random
 import time
 import cson
+import argparse
+from colorama import init
 
-os.sys.path.insert(0, "./lib/")
-from color import *
-import args
+init()
+
+def red(text):
+    return "\033[31m" + text + "\033[0m"
+
+def green(text):
+    return "\033[32m" + text + "\033[0m"
+
+def yellow(text):
+    return "\033[33m" + text + "\033[0m"
+
+def blue(text):
+    return "\033[44m" + text + "\033[0m"
+
+def logo(name):
+    spaces = " " * (len(name) + 2)
+
+    print(blue(spaces))
+    print(blue(" " + name + " "))
+    print(blue(spaces))
 
 #REWRITE
 def log(text, left=False, right=True):
@@ -22,9 +41,12 @@ def clog(text, left=False, right=True):
 
         return leftSpace + yellow("[DEV]") + rightSpace + text
 
-import args
+parser = argparse.ArgumentParser()
+parser.add_argument("-d", "--dev", action="store_true", help="Dev mode")
+parser.add_argument("-t", "--test", action="store_true", help="Test mode")
+parser.add_argument("-l", "--lang", help="Your lang")
 
-args = args.get()
+args = parser.parse_args()
 lang = args.lang
 
 if lang != "de" and lang != "en" and lang != "ru" and lang != "ua" and lang != "em" and lang != "it" and lang != "fr":
