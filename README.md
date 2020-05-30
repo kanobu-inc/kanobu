@@ -35,7 +35,7 @@ Show all variables, all variants of game (`win`, `lose`, `draw`), FIXME, TODO, h
 ## ⚒ Build
 Build supported on all popular os (`Windows`, `Mac OS`, `Linux`). You can build for your platform, not other
 
-Planned building for `Windows x32`
+Planned building for `Windows x86`
 
 To build, run this code:
 ```
