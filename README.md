@@ -26,12 +26,12 @@ To start, run this code:
 python kanobu.py
 ```
 ### ⚙️ Options
-#### dev
-To get developers functions (`log`, `clog`), and logs about variables and other parameters
-#### lang
-For set default language. All languages placed in `locale`
-#### 🗓 test
-Show all variables, all variants of game (`win`, `lose`, `draw`), FIXME, TODO, help information
+#### `dev`
+To get developers functions, and logs about variables and other parameters
+#### `lang`
+For set default language. All languages placed in locale folder
+#### 🗓 `test`
+Show all variables, all variants of game (win, lose, draw), FIXME, TODO, help information
 ## ⚒ Build
 Build supported on all popular os (`Windows`, `Mac OS`, `Linux`). You can build for your platform, not other
 
