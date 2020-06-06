@@ -17,13 +17,13 @@ To install, you must download repository and dependencies:
 ```
 git clone https://github.com/jDan735/kanobu.git
 cd kanobu
-pip install -r requirements.txt
+python setup.py install
 ```
 
 ## 🚀 Start
 To start, run this code:
 ```
-python kanobu.py
+kanobu
 ```
 ### ⚙️ Options
 #### `dev`
@@ -37,10 +37,9 @@ Planned building for `Windows x86`
 
 To build, run this code:
 ```
-pip install pyinstaller
-pyinstaller kanobu.py --onefile
+python setup.py install
 ```
-Then copy all files without `kanobu.py` to `dist`
+Then copy `C:\Users\USERNAME\AppData\Local\Programs\Python\Python*\Scripts\kanobu.exe` to `kanobu` folder
 ## 🔨 Dependencies
 ### 🖌 [colorama](https://github.com/tartley/colorama)
 Simple cross-platform colored terminal text in Python. Support `cmd`, `bash`
