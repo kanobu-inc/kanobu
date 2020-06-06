@@ -1,11 +1,16 @@
 import setuptools
 
+with open("README.md", "r") as readme:
+    long_description = readme.read()
+
 setuptools.setup(
     name="kanobu",
-    version="0.1.0", # I not count versions
+    version="0.1.0",
     author="Daniel Zakharov",
     author_email="daniel734@bk.ru",
     description="Free implementation of the game \"stone, scissors, paper\"",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     keywords="kanobu game",
     url="https://github.com/jDan735/kanobu",
     license="MIT",
@@ -25,7 +30,7 @@ setuptools.setup(
     ],
 
     entry_points={
-        "console_scripts":[
+        "console_scripts": [
             "kanobu=kanobu.__main__:main"
         ]
     }
