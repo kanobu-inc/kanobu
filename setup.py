@@ -21,5 +21,11 @@ setuptools.setup(
     install_requires=[
         "colorama",
         "cson"
-    ]
+    ],
+
+    entry_points={
+        "console_scripts":[
+            "kanobu=kanobu.__main__:main"
+        ]
+    }
 )

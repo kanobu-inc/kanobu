@@ -1,4 +1,4 @@
-if __name__ == "__main__":
+def main():
 
     import os
     import random
@@ -8,8 +8,6 @@ if __name__ == "__main__":
     from colorama import init
 
     init()
-
-    print(os.getcwd())
 
     def red(text):
         return "\033[31m" + text + "\033[0m"
@@ -114,3 +112,6 @@ if __name__ == "__main__":
 
         if play != locale["message"]["play"]["arguments"][0]:
             break
+
+if __name__ == "__main__":
+    main()
