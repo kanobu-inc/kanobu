@@ -5,7 +5,7 @@ with open("README.md", encoding="utf-8") as readme:
 
 setuptools.setup(
     name="kanobu",
-    version="0.1.0",
+    version="0.1.1",
     author="Daniel Zakharov",
     author_email="daniel734@bk.ru",
     description="Free implementation of the game \"stone, scissors, paper\"",
