@@ -1,9 +1,10 @@
-import setuptools
+#import setuptools
+from distutils.core import setup
 
 with open("README.md", encoding="utf-8") as readme:
     long_description = readme.read()
 
-setuptools.setup(
+setup(
     name="kanobu",
     version="0.1.1",
     author="Daniel Zakharov",
@@ -14,6 +15,7 @@ setuptools.setup(
     keywords="kanobu game",
     url="https://github.com/jDan735/kanobu",
     license="MIT",
+    include_package_data=True,
     classifiers=[
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.4",
@@ -23,12 +25,11 @@ setuptools.setup(
         "Programming Language :: Python :: 3.8",
         "License :: OSI Approved :: MIT License",
     ],
-    python_requires=">=3.4",
+    python_requires=">=3",
     install_requires=[
         "colorama",
         "cson"
     ],
-
     entry_points={
         "console_scripts": [
             "kanobu=kanobu.__main__:main"
