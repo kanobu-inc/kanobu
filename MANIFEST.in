@@ -1,7 +1,1 @@
-include kanobu/locale/de.cson
-include kanobu/locale/ru.cson
-include kanobu/locale/em.cson
-include kanobu/locale/fr.cson
-include kanobu/locale/it.cson
-include kanobu/locale/ua.cson
-include kanobu/locale/en.cson
+recursive-include kanobu/locale *.cson

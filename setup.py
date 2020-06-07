@@ -15,6 +15,7 @@ setup(
     keywords="kanobu game",
     url="https://github.com/jDan735/kanobu",
     license="MIT",
+    include_package_data=True,
     packages=["kanobu"],
     classifiers=[
         "Programming Language :: Python :: 3",
