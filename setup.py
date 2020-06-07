@@ -1,12 +1,12 @@
-#import setuptools
-from distutils.core import setup
+from setuptools import setup
+#from distutils.core import setup
 
 with open("README.md", encoding="utf-8") as readme:
     long_description = readme.read()
 
 setup(
     name="kanobu",
-    version="0.1.1",
+    version="0.1.2",
     author="Daniel Zakharov",
     author_email="daniel734@bk.ru",
     description="Free implementation of the game \"stone, scissors, paper\"",
@@ -15,7 +15,6 @@ setup(
     keywords="kanobu game",
     url="https://github.com/jDan735/kanobu",
     license="MIT",
-    include_package_data=True,
     classifiers=[
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.4",
