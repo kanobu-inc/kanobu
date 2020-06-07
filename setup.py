@@ -6,7 +6,7 @@ with open("README.md", encoding="utf-8") as readme:
 
 setup(
     name="kanobu",
-    version="0.1.2",
+    version="0.1.3b1",
     author="Daniel Zakharov",
     author_email="daniel734@bk.ru",
     description="Free implementation of the game \"stone, scissors, paper\"",
@@ -15,6 +15,7 @@ setup(
     keywords="kanobu game",
     url="https://github.com/jDan735/kanobu",
     license="MIT",
+    packages=["kanobu"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.4",
@@ -31,7 +32,8 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "kanobu=kanobu.__main__:main"
+            "kanobu=kanobu.kanobu:main",
+            "ropasci=kanobu.kanobu:main"
         ]
     }
 )
