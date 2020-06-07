@@ -6,7 +6,7 @@ with open("README.md", encoding="utf-8") as readme:
 
 setup(
     name="kanobu",
-    version="0.1.3b1",
+    version="0.1.3b2",
     author="Daniel Zakharov",
     author_email="daniel734@bk.ru",
     description="Free implementation of the game \"stone, scissors, paper\"",
