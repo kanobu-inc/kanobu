@@ -1,0 +1,7 @@
+include locale/de.cson
+include locale/ru.cson
+include locale/em.cson
+include locale/fr.cson
+include locale/it.cson
+include locale/ua.cson
+include locale/en.cson
