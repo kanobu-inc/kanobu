@@ -54,9 +54,16 @@ def main():
     if lang != "de" and lang != "en" and lang != "ru" and lang != "ua" and lang != "em" and lang != "it" and lang != "fr":
         lang = input('Your language? (de, en, ru, ua, em, it, fr) ')
         while lang != "de" and lang != "en" and lang != "ru" and lang != "ua" and lang != "em" and lang != "it" and lang != "fr":
+
             lang = input('Your language? (de, en, ru, ua, em, it, fr) ')
 
-    with open("./kanobu/locale/" + lang + ".cson", encoding="utf-8") as locale_file:
+    log(os.path.abspath(__file__))
+
+    try:
+        locale_file = open("./kanobu/locale/" + lang + ".cson", encoding="utf-8")
+    except FileNotFoundError:
+        locale_file = open("./locale/" + lang + ".cson", encoding="utf-8")
+    finally:
         locale = cson.load(locale_file)
         log(locale["lang"]["name"])
 
