@@ -25,10 +25,18 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-d", "--dev", action="store_true", help="Dev mode")
     parser.add_argument("-t", "--test", action="store_true", help="Test mode")
+    parser.add_argument("-v", "--version", action="store_true", help="Show version")
     parser.add_argument("-l", "--lang", help="Your lang")
 
     args = parser.parse_args()
     lang = args.lang
+
+    path = os.path.dirname(os.path.abspath(__file__))
+
+    if args.version:
+        with open(path + "../package.yaml" + ".yaml", encoding="utf-8") as package_file:
+            print("v" + yaml.safe_load(package_file)["version"])
+        quit()
 
     if lang != "de" and lang != "en" and lang != "ru" and lang != "ua" and lang != "em" and lang != "it" and lang != "fr":
         lang = input('Your language? (de, en, ru, ua, em, it, fr) ')
@@ -36,7 +44,6 @@ def main():
             lang = input('Your language? (de, en, ru, ua, em, it, fr) ')
 
     log(os.path.abspath(__file__))
-    path = os.path.dirname(os.path.abspath(__file__))
 
     log(path)
 

@@ -23,6 +23,8 @@ kanobu
 To get developers functions, and logs about variables and other parameters
 #### `lang`
 For set default language. All languages placed in locale folder
+#### `version`
+To get version
 ## 🔨 Dependencies
 ### 🖌 [colorama](https://github.com/tartley/colorama)
 Simple cross-platform colored terminal text in Python. Support `cmd`, `bash`

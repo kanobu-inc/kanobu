@@ -1,12 +1,16 @@
 from setuptools import setup
+import yaml
 #from distutils.core import setup
 
 with open("README.md", encoding="utf-8") as readme:
     long_description = readme.read()
 
+with open("./package.yaml", encoding="utf-8") as package_file:
+    version = yaml.safe_load(package_file)["version"]
+
 setup(
     name="kanobu",
-    version="0.1.4",
+    version=version,
     author="Daniel Zakharov",
     author_email="daniel734@bk.ru",
     description="Free implementation of the game \"stone, scissors, paper\"",
