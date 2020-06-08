@@ -26,6 +26,7 @@ def main():
     parser.add_argument("-d", "--dev", action="store_true", help="Dev mode")
     parser.add_argument("-t", "--test", action="store_true", help="Test mode")
     parser.add_argument("-v", "--version", action="store_true", help="Show version")
+    parser.add_argument("-c", "--choice", help="Enter choice without input")
     parser.add_argument("-l", "--lang", help="Your lang")
 
     args = parser.parse_args()
@@ -63,7 +64,15 @@ def main():
         for key in range(3):
             print(str(key + 1) + ". " + locale["objects"][key])
 
-        player_input = input(locale["message"]["choice"])
+        if (args.choice == False) == False:
+            if args.choice == "1" or args.choice == "2" or args.choice == "3":
+                player_input = args.choice
+                print(locale["message"]["choice"] + args.choice)
+            else:
+                print(red("[ERROR]") + " Use 1, 2, 3 for choice")
+                quit()
+        else:
+            player_input = input(locale["message"]["choice"])
         while player_input != "1" and player_input != "2" and player_input != "3":
             player_input = input(locale["message"]["choice"])
 
