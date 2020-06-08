@@ -3,8 +3,8 @@ def main():
     import os
     import random
     import time
-    import cson
     import argparse
+    import yaml
     from colorama import init
 
     init()
@@ -64,12 +64,12 @@ def main():
     separator = "/" if os.name == "posix" or os.name == "macos" else "\\"
 
     try:
-        with open(path + "\\kanobu\\locale\\".replace("\\", separator) + lang + ".cson", encoding="utf-8") as locale_file:
-            locale = cson.load(locale_file)
+        with open(path + "\\kanobu\\locale\\".replace("\\", separator) + lang + ".yaml", encoding="utf-8") as locale_file:
+            locale = yaml.safe_load(locale_file)
             log(locale["lang"]["name"])
     except FileNotFoundError:
-        with open(path + "\\locale\\".replace("\\", separator) + lang + ".cson", encoding="utf-8") as locale_file:
-            locale = cson.load(locale_file)
+        with open(path + "\\locale\\".replace("\\", separator) + lang + ".yaml", encoding="utf-8") as locale_file:
+            locale = yaml.safe_load(locale_file)
             log(locale["lang"]["name"])
 
     logo(locale["game"])
