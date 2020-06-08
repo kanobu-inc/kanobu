@@ -37,17 +37,16 @@ python setup.py install
 Simple cross-platform colored terminal text in Python. Support `cmd`, `bash`
 ### 📄 [pycjson](https://github.com/avakar/pycson)
 A Coffescript Object Notation (CSON) parser. Help write configs for humans. Based on `CoffeeScript`
-## 🧑‍💻 For developers
-### 📖 Styles of commits
-#### 🔥 New release
+## 📖 Styles of commits
+### 🔥 New release
 ```
 🎉 New release
 ```
-#### 🗣 Fixes in locales
+### 🗣 Fixes in locales
 ```
 🇩🇪 Fixed german
 ```
-#### 📄 Fixes in docs
+### 📄 Fixes in docs
 ```
 📝 Fixed logs, changed title
 ```
