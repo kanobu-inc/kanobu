@@ -72,10 +72,8 @@ def main():
             locale = cson.load(locale_file)
             log(locale["lang"]["name"])
 
-    logo(locale["game"])
-
     while True:
-
+        logo(locale["game"])
         for key in range(3):
             print(str(key + 1) + ". " + locale["objects"][key])
 
