@@ -33,7 +33,7 @@ setup(
     python_requires=">=3",
     install_requires=[
         "colorama",
-        "cson"
+        "pyyaml"
     ],
     entry_points={
         "console_scripts": [
