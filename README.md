@@ -26,8 +26,8 @@ For set default language. All languages placed in locale folder
 ## 🔨 Dependencies
 ### 🖌 [colorama](https://github.com/tartley/colorama)
 Simple cross-platform colored terminal text in Python. Support `cmd`, `bash`
-### 📄 [pycjson](https://github.com/avakar/pycson)
-A Coffescript Object Notation (CSON) parser. Help write configs for humans. Based on `CoffeeScript`
+### 📄 [pyyaml](https://github.com/yaml/pyyaml)
+The next generation YAML parser and emitter for Python.
 ## 📖 Styles of commits
 ### 🔥 New release
 ```
