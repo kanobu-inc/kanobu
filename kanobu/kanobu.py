@@ -6,6 +6,7 @@ def main():
     import cson
     import argparse
     from kanobu.color import red, green, yellow, blue, logo
+    from kanobu import __version__
 
     #REWRITE
     def log(text, left=False, right=True):
@@ -35,8 +36,7 @@ def main():
     path = os.path.dirname(os.path.abspath(__file__))
 
     if args.version:
-        with open(path + "../package.yaml", encoding="utf-8") as package_file:
-            print("v" + yaml.safe_load(package_file)["version"])
+        print(__version__)
         quit()
 
     if lang != "de" and lang != "en" and lang != "ru" and lang != "ua" and lang != "em" and lang != "it" and lang != "fr":

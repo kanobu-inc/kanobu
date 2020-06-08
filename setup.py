@@ -1,24 +1,20 @@
 from setuptools import setup
-import yaml
-#from distutils.core import setup
+from kanobu import __version__
 
 with open("README.md", encoding="utf-8") as readme:
     long_description = readme.read()
 
-with open("./package.yaml", encoding="utf-8") as package_file:
-    package = yaml.safe_load(package_file)
-
 setup(
-    name=package["name"],
-    version=package["version"],
-    author=package["author"],
-    author_email=package["email"],
-    description=package["description"],
+    name="kanobu",
+    version=__version__,
+    author="Daniel Zakharov",
+    author_email="daniel734@bk.ru",
+    description="Free implementation of the game \"stone, scissors, paper\"",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    keywords=package["keywords"],
-    url=package["url"],
-    license=package["license"],
+    keywords="kanobu game",
+    url="https://github.com/jDan735/kanobu",
+    license="MIT",
     include_package_data=True,
     packages=["kanobu"],
     classifiers=[
@@ -31,7 +27,10 @@ setup(
         "License :: OSI Approved :: MIT License",
     ],
     python_requires=">=3",
-    install_requires=package["dependencies"],
+    install_requires=[
+        "colorama",
+        "pyyaml"
+    ],
     entry_points={
         "console_scripts": [
             "kanobu=kanobu.kanobu:main",
