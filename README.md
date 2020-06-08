@@ -23,15 +23,6 @@ kanobu
 To get developers functions, and logs about variables and other parameters
 #### `lang`
 For set default language. All languages placed in locale folder
-## `NOT WORK` ⚒ Build
-Build supported on all popular os (`Windows`, `Mac OS`, `Linux`). You can build for your platform, not other
-
-Planned building for `Windows x86`
-
-To build, run this code:
-```
-python setup.py install
-```
 ## 🔨 Dependencies
 ### 🖌 [colorama](https://github.com/tartley/colorama)
 Simple cross-platform colored terminal text in Python. Support `cmd`, `bash`
