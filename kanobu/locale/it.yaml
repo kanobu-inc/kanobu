@@ -11,10 +11,10 @@ results:
     - Perdere
     - Legare
 bot:
-    choice: "Bot sceglie:"
+    choice: Bot sceglie
     have: Il bot aveva
 message:
-    choice: "Scegliere: "
+    choice: Scegliere
     play:
         request: Continuiamo a giocare?(sì/no)
         arguments:
