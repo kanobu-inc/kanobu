@@ -1,4 +1,12 @@
 name: kanobu
 version: 0.1.5
 license: MIT
-author: jDan735
+author: Daniel Zakharov
+description: Free implementation of the game \"stone, scissors, paper\"
+email: daniel734@bk.ru
+keywords: kanobu game
+license: MIT
+url: https://github.com/jDan735/kanobu
+dependencies:
+  - pyyaml
+  - colorama

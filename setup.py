@@ -6,19 +6,19 @@ with open("README.md", encoding="utf-8") as readme:
     long_description = readme.read()
 
 with open("./package.yaml", encoding="utf-8") as package_file:
-    version = yaml.safe_load(package_file)["version"]
+    package = yaml.safe_load(package_file)
 
 setup(
-    name="kanobu",
-    version=version,
-    author="Daniel Zakharov",
-    author_email="daniel734@bk.ru",
-    description="Free implementation of the game \"stone, scissors, paper\"",
+    name=package["name"],
+    version=package["version"],
+    author=package["author"],
+    author_email=package["email"],
+    description=package["description"],
     long_description=long_description,
     long_description_content_type="text/markdown",
-    keywords="kanobu game",
-    url="https://github.com/jDan735/kanobu",
-    license="MIT",
+    keywords=package["keywords"],
+    url=package["url"],
+    license=package["license"],
     include_package_data=True,
     packages=["kanobu"],
     classifiers=[
@@ -31,10 +31,7 @@ setup(
         "License :: OSI Approved :: MIT License",
     ],
     python_requires=">=3",
-    install_requires=[
-        "colorama",
-        "pyyaml"
-    ],
+    install_requires=package["dependencies"],
     entry_points={
         "console_scripts": [
             "kanobu=kanobu.kanobu:main",
