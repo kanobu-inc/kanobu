@@ -34,7 +34,7 @@ def main():
     path = os.path.dirname(os.path.abspath(__file__))
 
     if args.version:
-        with open(path + "../package.yaml" + ".yaml", encoding="utf-8") as package_file:
+        with open(path + "../package.yaml", encoding="utf-8") as package_file:
             print("v" + yaml.safe_load(package_file)["version"])
         quit()
 
