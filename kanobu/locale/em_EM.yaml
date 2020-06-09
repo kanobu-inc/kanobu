@@ -1,0 +1,22 @@
+lang:
+    name: Emoji
+    case: false
+game: 🗿✂️📄
+objects:
+    - 🗿
+    - ✂️
+    - 📄
+results:
+    - 😃
+    - 😭
+    - 😐
+bot:
+    choice: 🤖👉
+    have: 🤖🤲
+message:
+    choice: 👉
+    play:
+        request: 🧩⏩❓(y/n)
+        arguments:
+            - y
+            - n
