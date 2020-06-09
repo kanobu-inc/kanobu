@@ -76,8 +76,7 @@ def main():
             else:
                 print(red("[ERROR]") + " Use 1, 2, 3 for choice")
                 quit()
-        else:
-            player_input = input(locale["message"]["choice"])
+                
         while player_input != "1" and player_input != "2" and player_input != "3":
             player_input = input(locale["message"]["choice"])
 
