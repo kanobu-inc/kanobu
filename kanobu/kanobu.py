@@ -64,15 +64,19 @@ def main():
         for key in range(3):
             print(str(key + 1) + ". " + locale["objects"][key])
 
-        if (args.choice == False) == False:
+        log("args.choice: " + str(args.choice))
+        log("args.choice == False: " + str(args.choice == False))
+
+        if args.choice == None:
+            player_input = input(locale["message"]["choice"])
+        else:
             if args.choice == "1" or args.choice == "2" or args.choice == "3":
                 player_input = args.choice
                 print(locale["message"]["choice"] + args.choice)
             else:
                 print(red("[ERROR]") + " Use 1, 2, 3 for choice")
                 quit()
-        else:
-            player_input = input(locale["message"]["choice"])
+                
         while player_input != "1" and player_input != "2" and player_input != "3":
             player_input = input(locale["message"]["choice"])
 
@@ -101,13 +105,15 @@ def main():
             if bot == i:
 
                 if i == 0:
-                    print(yellow(" " + locale["results"][key] + "!") + " " + locale["bot"]["have"] + a + " " + object)
+                    color_message = yellow(" " + locale["results"][key] + "!")
 
                 if i == 1:
-                    print(green(" " + locale["results"][key] + "!") + " " + locale["bot"]["have"] + a + " " + object)
+                    color_message = green(" " + locale["results"][key] + "!")
 
                 if i == 2:
-                    print(red(" " + locale["results"][key] + "!") + " " + locale["bot"]["have"] + a + " " + object)
+                    color_message = red(" " + locale["results"][key] + "!")
+
+                print(color_message + " " + locale["bot"]["have"] + a + " " + object)
 
             i += 1
 
