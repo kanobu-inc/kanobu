@@ -30,20 +30,7 @@ For enter choice without `input()`
 ## 🔨 Dependencies
 ### 🖌 [colorama](https://github.com/tartley/colorama)
 Simple cross-platform colored terminal text in Python. Support `cmd`, `bash`
-### 📄 [pycjson](https://github.com/avakar/pycson)
-A Coffescript Object Notation (CSON) parser. Help write configs for humans. Based on `CoffeeScript`
-## 📖 Styles of commits
-### 🔥 New release
-```
-🎉 New release
-```
-### 🗣 Fixes in locales
-```
-🇩🇪 Fixed german
-```
-### 📄 Fixes in docs
-```
-📝 Fixed logs, changed title
-```
-### 📰 Trello (ru)
+### 📄 [pyyaml](https://github.com/yaml/pyyaml)
+The next generation YAML parser and emitter for Python.
+## 📰 Trello (ru)
 You can subscribe to [trello](https://trello.com/b/o0ozs1XT) to get information about the new functionality
