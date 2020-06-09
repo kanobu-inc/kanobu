@@ -57,14 +57,6 @@ def main():
         print(yellow("[NOTE]") + " Write locale as ru_RU")
         quit()
 
-
-
-
-    # if lang != "de" and lang != "en" and lang != "ru" and lang != "ua" and lang != "em" and lang != "it" and lang != "fr":
-    #     lang = input('Your language? (de, en, ru, ua, em, it, fr) ')
-    #     while lang != "de" and lang != "en" and lang != "ru" and lang != "ua" and lang != "em" and lang != "it" and lang != "fr":
-    #         lang = input('Your language? (de, en, ru, ua, em, it, fr) ')
-
     log(os.path.abspath(__file__))
 
     log(path)
