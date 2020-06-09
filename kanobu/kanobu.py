@@ -3,8 +3,9 @@ def main():
     import os
     import random
     import time
-    import cson
+    import yaml
     import argparse
+    import locale
     from kanobu.color import red, green, yellow, blue, logo
     from kanobu import __version__
 
@@ -31,7 +32,6 @@ def main():
     parser.add_argument("-l", "--lang", help="Your lang")
 
     args = parser.parse_args()
-    lang = args.lang
 
     path = os.path.dirname(os.path.abspath(__file__))
 
@@ -39,10 +39,31 @@ def main():
         print(__version__)
         quit()
 
-    if lang != "de" and lang != "en" and lang != "ru" and lang != "ua" and lang != "em" and lang != "it" and lang != "fr":
-        lang = input('Your language? (de, en, ru, ua, em, it, fr) ')
-        while lang != "de" and lang != "en" and lang != "ru" and lang != "ua" and lang != "em" and lang != "it" and lang != "fr":
-            lang = input('Your language? (de, en, ru, ua, em, it, fr) ')
+    if args.lang == None:
+        lang = locale.getdefaultlocale()[0]
+
+    elif (args.lang == "de_DE" or
+          args.lang == "en_EN" or
+          args.lang == "ru_RU" or
+          args.lang == "ua_UA" or
+          args.lang == "em_EM" or
+          args.lang == "it_IT" or
+          args.lang == "fr_FR"):
+
+         lang = args.lang
+
+    else:
+        print(red("[ERROR]") + " Not supported locale")
+        print(yellow("[NOTE]") + " Write locale as ru_RU")
+        quit()
+
+
+
+
+    # if lang != "de" and lang != "en" and lang != "ru" and lang != "ua" and lang != "em" and lang != "it" and lang != "fr":
+    #     lang = input('Your language? (de, en, ru, ua, em, it, fr) ')
+    #     while lang != "de" and lang != "en" and lang != "ru" and lang != "ua" and lang != "em" and lang != "it" and lang != "fr":
+    #         lang = input('Your language? (de, en, ru, ua, em, it, fr) ')
 
     log(os.path.abspath(__file__))
 
@@ -51,12 +72,12 @@ def main():
     separator = "/" if os.name == "posix" or os.name == "macos" else "\\"
 
     try:
-        with open(path + "\\kanobu\\locale\\".replace("\\", separator) + lang + ".cson", encoding="utf-8") as locale_file:
-            locale = cson.load(locale_file)
+        with open(path + "\\kanobu\\locale\\".replace("\\", separator) + lang + ".yaml", encoding="utf-8") as locale_file:
+            locale = yaml.safe_load(locale_file)
             log(locale["lang"]["name"])
     except FileNotFoundError:
-        with open(path + "\\locale\\".replace("\\", separator) + lang + ".cson", encoding="utf-8") as locale_file:
-            locale = cson.load(locale_file)
+        with open(path + "\\locale\\".replace("\\", separator) + lang + ".yaml", encoding="utf-8") as locale_file:
+            locale = yaml.safe_load(locale_file)
             log(locale["lang"]["name"])
 
     while True:
@@ -76,7 +97,7 @@ def main():
             else:
                 print(red("[ERROR]") + " Use 1, 2, 3 for choice")
                 quit()
-                
+
         while player_input != "1" and player_input != "2" and player_input != "3":
             player_input = input(locale["message"]["choice"])
 
