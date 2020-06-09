@@ -1,17 +1,16 @@
 # 🗿✂️📄 Kanobu
 ## 🗣 Localisation
-| Language      | Status   | Language      | Status    |
-|---------------|----------|---------------|-----------|
-| 🇷🇺 Russian    | 👍 stable | 🇩🇪 German     | ⚠️ beta   |
-| 🇺🇦 Ukrainian  | 👍 stable | 🇬🇧 English    | 👍 stable |
-| 🇫🇷 French     | ⚠️ beta   | 🇪🇸 Spanish    | 🗓 plans  |
-| 🇨🇳 Chinese    | ❌ none   | 🇵🇹 Portuguese | 🗓 plans  |
-| 🇵🇱 Polish     | 🗓 plans  | 🇮🇹 Italian    | ⚠️ beta   |
-| 🇹🇷 Turkish    | ❌ none   | 🇸🇦 Arabien    | ❌ none   |
-| 🇰🇷 Korean     | ❌ none   | 🇮🇳 Hindi      | ❌ none   |
-| 🇭🇺 Hungarian  | 🗓 plans  | 😀 Emoji      | ⚠️ beta   |
+| Language      | Locale | Status   | Language      | Status    | Locale |
+|---------------|--------|----------|---------------|-----------|--------|
+| 🇷🇺 Russian    | ru_RU   | 👍 stable | 🇩🇪 German     | ⚠️ beta  | de_DE |
+| 🇺🇦 Ukrainian  | ua_UA   | 👍 stable | 🇬🇧 English    | 👍 stable| en_EN |
+| 🇫🇷 French     | fr_FR   | ⚠️ beta   | 🇪🇸 Spanish    | 🗓 plans  | es_ES |
+| 🇨🇳 Chinese    | cn_CN   | ❌ none   | 🇵🇹 Portuguese | 🗓 plans  | pt_PT |
+| 🇵🇱 Polish     | pl_PL   | 🗓 plans   | 🇮🇹 Italian    | ⚠️ beta  | it_IT |
+| 🇹🇷 Turkish    | tr_TR   | ❌ none   | 🇸🇦 Arabien    | ❌ none  | sa_SA |
+| 🇰🇷 Korean     | kr_KR   | ❌ none   | 🇮🇳 Hindi      | ❌ none  | in_IN |
+| 🇭🇺 Hungarian  | hu_HU   |🗓 plans  | 😀 Emoji      | ⚠️ beta   | em_EM |
 
-The [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code system is used to name the localization files.
 ## 🚀 Start
 To start, run this code:
 ```
@@ -25,6 +24,7 @@ kanobu
 | `lang`    | For set default language. All languages placed in locale folder            |
 | `version` | To get version                                                             |
 | `choise`  | For enter choice without `input()`                                         |
+
 ## 🔨 Dependencies
 ### 🖌 [colorama](https://github.com/tartley/colorama)
 Simple cross-platform colored terminal text in Python. Support `cmd`, `bash`
