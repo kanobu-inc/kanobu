@@ -65,7 +65,7 @@ def main():
             print(str(key + 1) + ". " + locale["objects"][key])
 
         log("args.choice: " + str(args.choice))
-        log("args.choice == False: "str(args.choice == False))
+        log("args.choice == False: " + str(args.choice == False))
 
         if args.choice == None:
             player_input = input(locale["message"]["choice"])
