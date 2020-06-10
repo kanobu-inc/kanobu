@@ -43,9 +43,10 @@ def main():
         lang = locale.getdefaultlocale()[0]
 
     elif (args.lang == "de_DE" or
-          args.lang == "en_EN" or
+          args.lang == "en_US" or
+          args.lang == "en_UK" or
           args.lang == "ru_RU" or
-          args.lang == "ua_UA" or
+          args.lang == "uk_UA" or
           args.lang == "em_EM" or
           args.lang == "it_IT" or
           args.lang == "fr_FR"):
