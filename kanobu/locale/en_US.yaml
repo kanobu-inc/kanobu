@@ -1,0 +1,22 @@
+lang:
+    name: English
+    case: false
+game: Rock paper scissors
+objects:
+  - Rock
+  - Scissors
+  - Paper
+results:
+   - Victory
+   - Loss
+   - Draw
+bot:
+    choice: "Result:"
+    have: Bot has chosen
+message:
+    choice: "Your choice: "
+    play:
+        request: Play again? (y/n)
+        arguments:
+          - y
+          - n
