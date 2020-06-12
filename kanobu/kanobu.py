@@ -33,43 +33,36 @@ def main():
 
     args = parser.parse_args()
 
+    log(locale.getdefaultlocale()[0])
+
     path = os.path.dirname(os.path.abspath(__file__))
+    separator = "/" if os.name == "posix" or os.name == "macos" else "\\"
 
     if args.version:
         print(__version__)
         quit()
 
-    if args.lang == None:
-        lang = locale.getdefaultlocale()[0]
+    langfile = locale.getdefaultlocale()[0] if args.lang == None else args.lang
 
-    elif (args.lang == "de_DE" or
-          args.lang == "en_US" or
-          args.lang == "en_UK" or
-          args.lang == "ru_RU" or
-          args.lang == "uk_UA" or
-          args.lang == "em_EM" or
-          args.lang == "it_IT" or
-          args.lang == "fr_FR"):
+    log(str(os.path.isfile(path + "/locale/".replace("/", separator) + langfile + ".yaml")))
 
-         lang = args.lang
+    log(path + "/locale/".replace("/", separator) + langfile + ".yaml")
+
+    if os.path.isfile(path + "/locale/".replace("/", separator) + langfile + ".yaml"):
+
+        log("File finded")
 
     else:
         print(red("[ERROR]") + " Not supported locale")
-        print(yellow("[NOTE]") + " Write locale as ru_RU")
+        print(yellow("[NOTE]") + " start kanobu --lang en_US")
         quit()
 
-    log(os.path.abspath(__file__))
-
-    log(path)
-
-    separator = "/" if os.name == "posix" or os.name == "macos" else "\\"
-
     try:
-        with open(path + "\\kanobu\\locale\\".replace("\\", separator) + lang + ".yaml", encoding="utf-8") as locale_file:
+        with open(path + "/kanobu/locale/".replace("/", separator) + langfile + ".yaml", encoding="utf-8") as locale_file:
             locale = yaml.safe_load(locale_file)
             log(locale["lang"]["name"])
     except FileNotFoundError:
-        with open(path + "\\locale\\".replace("\\", separator) + lang + ".yaml", encoding="utf-8") as locale_file:
+        with open(path + "/locale/".replace("/", separator) + langfile + ".yaml", encoding="utf-8") as locale_file:
             locale = yaml.safe_load(locale_file)
             log(locale["lang"]["name"])
 
