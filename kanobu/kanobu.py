@@ -39,24 +39,25 @@ def main():
     separator = "/" if os.name == "posix" or os.name == "macos" else "\\"
 
     if args.version:
-        print(__version__)
+        print("v" + __version__)
         quit()
 
     langfile = locale.getdefaultlocale()[0] if args.lang == None else args.lang
 
-    log(str(os.path.isfile(path + "/locale/".replace("/", separator) + langfile + ".yaml")))
+    log(str(os.path.exists(path + "/locale/".replace("/", separator) + langfile + ".yaml")))
 
     log(path + "/locale/".replace("/", separator) + langfile + ".yaml")
 
-    if os.path.isfile(path + "/locale/".replace("/", separator) + langfile + ".yaml"):
-
-        log("File finded")
-
-    else:
-        print(red("[ERROR]") + " Not supported locale")
-        print(yellow("[NOTE]") + " start kanobu --lang en_US")
-        quit()
-
+    try:
+        open(path + "/locale/".replace("/", separator) + langfile + ".yaml")
+    except FileNotFoundError:
+        for file in os.listdir(path + "/locale/".replace("/", separator)):
+            # file = file.replace(".yaml", "")
+            log(file)
+            if file[0] + file[1] == langfile[0] + langfile[1]:
+                with open(path + "/locale/".replace("/", separator) + file) as localefile1:
+                    if yaml.safe_load(localefile1.read())["lang"]["default"]:
+                        langfile = file.replace(".yaml", "")
     try:
         with open(path + "/kanobu/locale/".replace("/", separator) + langfile + ".yaml", encoding="utf-8") as locale_file:
             locale = yaml.safe_load(locale_file)
