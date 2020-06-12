@@ -1,15 +1,15 @@
 # 🗿✂️📄 Kanobu
 ## 🗣 Localisation
-| Language      | Locale | Status   | Language      | Status    | Locale |
-|---------------|--------|----------|---------------|-----------|--------|
-| 🇷🇺 Russian    | `ru_RU`   | 👍 stable | 🇩🇪 German     | ⚠️ beta  | `de_DE` |
-| 🇺🇦 Ukrainian  | `ua_UA`   | 👍 stable | 🇬🇧 English    | 👍 stable| `en_EN` |
-| 🇫🇷 French     | `fr_FR`   | ⚠️ beta   | 🇪🇸 Spanish    | 🗓 plans  | `es_ES` |
-| 🇨🇳 Chinese    | `cn_CN`   | ❌ none   | 🇵🇹 Portuguese | 🗓 plans  | `pt_PT` |
-| 🇵🇱 Polish     | `pl_PL`   | 🗓 plans   | 🇮🇹 Italian    | ⚠️ beta  | `it_IT` |
-| 🇹🇷 Turkish    | `tr_TR`   | ❌ none   | 🇸🇦 Arabien    | ❌ none  | `sa_SA` |
-| 🇰🇷 Korean     | `kr_KR`   | ❌ none   | 🇮🇳 Hindi      | ❌ none  | `in_IN` |
-| 🇭🇺 Hungarian  | `hu_HU`   |🗓 plans  | 😀 Emoji      | ⚠️ beta   | `em_EM` |
+| Language      | Locale    | Status    | Language     | Status    | Locale   |
+|---------------|-----------|-----------|--------------|-----------|----------|
+| 🇷🇺 Russian    | `ru_RU`   | 👍 stable | 🇩🇪 German     | ⚠️ beta    | `de_DE` |
+| 🇺🇦 Ukrainian  | `ua_UA`   | 👍 stable | 🇬🇧 English    | 👍 stable  | `en_EN` |
+| 🇫🇷 French     | `fr_FR`   | ⚠️ beta   | 🇪🇸 Spanish    | 🗓 plans   | `es_ES` |
+| 🇨🇳 Chinese    | `cn_CN`   | ❌ none   | 🇵🇹 Portuguese | 🗓 plans   | `pt_PT` |
+| 🇵🇱 Polish     | `pl_PL`   | 🗓 plans  | 🇮🇹 Italian    | ⚠️ beta    | `it_IT` |
+| 🇹🇷 Turkish    | `tr_TR`   | ❌ none   | 🇸🇦 Arabien    | ❌ none    | `sa_SA` |
+| 🇰🇷 Korean     | `kr_KR`   | ❌ none   | 🇮🇳 Hindi      | ❌ none    | `in_IN` |
+| 🇭🇺 Hungarian  | `hu_HU`   | 🗓 plans  | 😀 Emoji      | ⚠️ beta    | `em_EM` |
 
 ## 🚀 Start
 To start, run this code:
