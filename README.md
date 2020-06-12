@@ -10,7 +10,7 @@
 | 🇹🇷 Turkish       | `tr_TR`   | ❌ none   | 🇸🇦 Arabien    | ❌ none    | `sa_SA` |
 | 🇰🇷 Korean        | `kr_KR`   | ❌ none   | 🇮🇳 Hindi      | ❌ none    | `in_IN` |
 | 🇭🇺 Hungarian     | `hu_HU`   | 🗓 plans  | 😀 Emoji      | ⚠️ beta    | `em_EM` |
-| 🇺🇸 English (USA) | `en_US`   | ⚠️ beta   | 🇧 Belarus    | ❌ none    | `be_BY` |
+| 🇺🇸 English (USA) | `en_US`   | ⚠️ beta   | 🇧🇾 Belarus    | ❌ none    | `be_BY` |
 
 ## 🚀 Start
 To start, run this code:
