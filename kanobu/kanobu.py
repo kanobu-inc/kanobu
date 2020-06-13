@@ -130,15 +130,15 @@ def main():
             if bot == i:
 
                 if i == 0:
-                    color_message = yellow(" " + locale["results"][key] + "!")
+                    message = yellow(" " + locale["results"][key] + "!")
 
                 if i == 1:
-                    color_message = green(" " + locale["results"][key] + "!")
+                    message = green(" " + locale["results"][key] + "!")
 
                 if i == 2:
-                    color_message = red(" " + locale["results"][key] + "!")
+                    message = red(" " + locale["results"][key] + "!")
 
-                print(color_message + " " + locale["bot"]["have"] + a + " " + object)
+                print(message + " " + locale["bot"]["have"] + a + " " + object)
 
             i += 1
 
