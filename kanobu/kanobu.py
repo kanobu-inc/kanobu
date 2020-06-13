@@ -101,13 +101,16 @@ def main():
         print()
 
         print(locale["bot"]["choice"] + ".", end="")
-        time.sleep(0.7)
+        time.sleep(0.6)
 
         print(".", end="")
         time.sleep(0.2)
 
         print(".")
         time.sleep(0.3)
+
+        print()
+        time.sleep(0.2)
 
         bot = random.randint(0, 2)
 
@@ -135,7 +138,6 @@ def main():
                 if i == 2:
                     color_message = red(" " + locale["results"][key] + "!")
 
-                print()
                 print(color_message + " " + locale["bot"]["have"] + a + " " + object)
 
             i += 1
