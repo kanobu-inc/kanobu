@@ -100,10 +100,15 @@ def main():
         player = int(player_input) - 1
         print()
 
-        print(locale["bot"]["choice"])
-        print()
+        print(locale["bot"]["choice"] + ".", end="")
+        time.sleep(0.7)
 
-        time.sleep(1)
+        print(".", end="")
+        time.sleep(0.2)
+
+        print(".")
+        time.sleep(0.3)
+
         bot = random.randint(0, 2)
 
         massive = [
@@ -130,6 +135,7 @@ def main():
                 if i == 2:
                     color_message = red(" " + locale["results"][key] + "!")
 
+                print()
                 print(color_message + " " + locale["bot"]["have"] + a + " " + object)
 
             i += 1
