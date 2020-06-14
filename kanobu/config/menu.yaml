@@ -1,0 +1,16 @@
+-
+    name: --dev
+    type: store_true
+    help: Enable developer mode
+-
+    name: --version
+    type: store_true
+    help: For version
+-
+    name: --choice
+    type: store
+    help: Enter choice without input
+-
+    name: --lang
+    type: store
+    help: Your lang

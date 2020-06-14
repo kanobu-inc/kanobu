@@ -1,1 +1,2 @@
 recursive-include kanobu/locale *.yaml
+recursive-include kanobu/config *.yaml

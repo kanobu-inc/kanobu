@@ -24,18 +24,24 @@ def main():
             return leftSpace + yellow("[DEV]") + rightSpace + text
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("-d", "--dev", action="store_true", help="Dev mode")
-    parser.add_argument("-t", "--test", action="store_true", help="Test mode")
-    parser.add_argument("-v", "--version", action="store_true", help="For version")
-    parser.add_argument("-c", "--choice", help="Enter choice without input")
-    parser.add_argument("-l", "--lang", help="Your lang")
+    path = os.path.dirname(os.path.abspath(__file__))
+    separator = "/" if os.name == "posix" or os.name == "macos" else "\\"
+    # parser.add_argument("-d", "--dev", action="store_true", help="Dev mode")
+
+    with open(path + "/config/menu.yaml".replace("/", separator)) as menu_file:
+        menu = yaml.safe_load(menu_file)
+        for item in menu:
+            parser.add_argument(
+                "-" + item["name"][2],
+                item["name"],
+                action=item["type"],
+                help=item["help"]
+            )
 
     args = parser.parse_args()
 
     log(locale.getdefaultlocale()[0])
 
-    path = os.path.dirname(os.path.abspath(__file__))
-    separator = "/" if os.name == "posix" or os.name == "macos" else "\\"
 
     if args.version:
         print("v" + __version__)
