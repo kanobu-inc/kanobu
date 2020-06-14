@@ -6,10 +6,9 @@ def main():
     import yaml
     import argparse
     import locale
-    from kanobu.color import red, green, yellow, blue, logo
+    from kanobu.color import red, green, yellow, logo
     from kanobu import __version__
 
-    #REWRITE
     def log(text, left=False, right=True):
         if args.dev:
             leftSpace = " " if left else ""
@@ -27,7 +26,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-d", "--dev", action="store_true", help="Dev mode")
     parser.add_argument("-t", "--test", action="store_true", help="Test mode")
-    parser.add_argument("-v", "--version", action="store_true", help="Show version")
+    parser.add_argument("-v", "--version", action="store_true", help="For version")
     parser.add_argument("-c", "--choice", help="Enter choice without input")
     parser.add_argument("-l", "--lang", help="Your lang")
 
@@ -73,28 +72,40 @@ def main():
             print(str(key + 1) + ". " + locale["objects"][key])
 
         log("args.choice: " + str(args.choice))
-        log("args.choice == False: " + str(args.choice == False))
+        log("args.choice == False: " + str(args.choice is False))
 
-        if args.choice == None:
+        if args.choice is None:
             player_input = input(locale["message"]["choice"])
         else:
-            if args.choice == "1" or args.choice == "2" or args.choice == "3":
+            if args.choice == "1" or \
+               args.choice == "2" or \
+               args.choice == "3":
                 player_input = args.choice
                 print(locale["message"]["choice"] + args.choice)
             else:
                 print(red("[ERROR]") + " Use 1, 2, 3 for choice")
                 quit()
 
-        while player_input != "1" and player_input != "2" and player_input != "3":
+        while (player_input != "1" and
+               player_input != "2" and
+               player_input != "3"):
             player_input = input(locale["message"]["choice"])
 
         player = int(player_input) - 1
         print()
 
-        print(locale["bot"]["choice"])
-        print()
+        print(locale["bot"]["choice"] + ".", end="")
+        time.sleep(0.6)
 
-        time.sleep(1)
+        print(".", end="")
+        time.sleep(0.2)
+
+        print(".")
+        time.sleep(0.3)
+
+        print()
+        time.sleep(0.2)
+
         bot = random.randint(0, 2)
 
         massive = [
@@ -105,23 +116,23 @@ def main():
 
         i = 0
         for key in massive[player]:
-            a = "" if locale["lang"]["case"] == False else locale["lang"]["case"][bot]
+            a = "" if locale["lang"]["case"] is False else locale["lang"]["case"][bot]
 
             object = locale["objects"][bot]
-            object = object if locale["lang"]["case"] == False else object.lower()
+            object = object if locale["lang"]["case"] is False else object.lower()
 
             if bot == i:
 
                 if i == 0:
-                    color_message = yellow(" " + locale["results"][key] + "!")
+                    message = yellow(" " + locale["results"][key] + "!")
 
                 if i == 1:
-                    color_message = green(" " + locale["results"][key] + "!")
+                    message = green(" " + locale["results"][key] + "!")
 
                 if i == 2:
-                    color_message = red(" " + locale["results"][key] + "!")
+                    message = red(" " + locale["results"][key] + "!")
 
-                print(color_message + " " + locale["bot"]["have"] + a + " " + object)
+                print(message + " " + locale["bot"]["have"] + a + " " + object)
 
             i += 1
 
