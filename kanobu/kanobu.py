@@ -3,32 +3,12 @@ def main():
     import os
     import random
     import time
-    import cson
+    import yaml
     import argparse
-    from colorama import init
+    import locale
+    from kanobu.color import red, green, yellow, logo
+    from kanobu import __version__
 
-    init()
-
-    def red(text):
-        return "\033[31m" + text + "\033[0m"
-
-    def green(text):
-        return "\033[32m" + text + "\033[0m"
-
-    def yellow(text):
-        return "\033[33m" + text + "\033[0m"
-
-    def blue(text):
-        return "\033[44m" + text + "\033[0m"
-
-    def logo(name):
-        spaces = " " * (len(name) + 2)
-
-        print(blue(spaces))
-        print(blue(" " + name + " "))
-        print(blue(spaces))
-
-    #REWRITE
     def log(text, left=False, right=True):
         if args.dev:
             leftSpace = " " if left else ""
@@ -46,50 +26,86 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-d", "--dev", action="store_true", help="Dev mode")
     parser.add_argument("-t", "--test", action="store_true", help="Test mode")
+    parser.add_argument("-v", "--version", action="store_true", help="For version")
+    parser.add_argument("-c", "--choice", help="Enter choice without input")
     parser.add_argument("-l", "--lang", help="Your lang")
 
     args = parser.parse_args()
-    lang = args.lang
 
-    if lang != "de" and lang != "en" and lang != "ru" and lang != "ua" and lang != "em" and lang != "it" and lang != "fr":
-        lang = input('Your language? (de, en, ru, ua, em, it, fr) ')
-        while lang != "de" and lang != "en" and lang != "ru" and lang != "ua" and lang != "em" and lang != "it" and lang != "fr":
-            lang = input('Your language? (de, en, ru, ua, em, it, fr) ')
+    log(locale.getdefaultlocale()[0])
 
-    log(os.path.abspath(__file__))
     path = os.path.dirname(os.path.abspath(__file__))
-
-    log(path)
-
     separator = "/" if os.name == "posix" or os.name == "macos" else "\\"
 
+    if args.version:
+        print("v" + __version__)
+        quit()
+
+    langfile = locale.getdefaultlocale()[0] if args.lang == None else args.lang
+
+    log(str(os.path.exists(path + "/locale/".replace("/", separator) + langfile + ".yaml")))
+
+    log(path + "/locale/".replace("/", separator) + langfile + ".yaml")
+
     try:
-        with open(path + "\\kanobu\\locale\\".replace("\\", separator) + lang + ".cson", encoding="utf-8") as locale_file:
-            locale = cson.load(locale_file)
+        open(path + "/locale/".replace("/", separator) + langfile + ".yaml")
+    except FileNotFoundError:
+        for file in os.listdir(path + "/locale/".replace("/", separator)):
+            # file = file.replace(".yaml", "")
+            log(file)
+            if file[0] + file[1] == langfile[0] + langfile[1]:
+                with open(path + "/locale/".replace("/", separator) + file) as localefile1:
+                    if yaml.safe_load(localefile1.read())["lang"]["default"]:
+                        langfile = file.replace(".yaml", "")
+    try:
+        with open(path + "/kanobu/locale/".replace("/", separator) + langfile + ".yaml", encoding="utf-8") as locale_file:
+            locale = yaml.safe_load(locale_file)
             log(locale["lang"]["name"])
     except FileNotFoundError:
-        with open(path + "\\locale\\".replace("\\", separator) + lang + ".cson", encoding="utf-8") as locale_file:
-            locale = cson.load(locale_file)
+        with open(path + "/locale/".replace("/", separator) + langfile + ".yaml", encoding="utf-8") as locale_file:
+            locale = yaml.safe_load(locale_file)
             log(locale["lang"]["name"])
 
-    logo(locale["game"])
-
     while True:
-
+        logo(locale["game"])
         for key in range(3):
             print(str(key + 1) + ". " + locale["objects"][key])
 
-        player_input = input(locale["message"]["choice"])
-        while player_input != "1" and player_input != "2" and player_input != "3":
+        log("args.choice: " + str(args.choice))
+        log("args.choice == False: " + str(args.choice is False))
+
+        if args.choice is None:
+            player_input = input(locale["message"]["choice"])
+        else:
+            if args.choice == "1" or \
+               args.choice == "2" or \
+               args.choice == "3":
+                player_input = args.choice
+                print(locale["message"]["choice"] + args.choice)
+            else:
+                print(red("[ERROR]") + " Use 1, 2, 3 for choice")
+                quit()
+
+        while (player_input != "1" and
+               player_input != "2" and
+               player_input != "3"):
             player_input = input(locale["message"]["choice"])
 
         player = int(player_input) - 1
         print()
 
-        print(locale["bot"]["choice"])
-        print()
+        print(locale["bot"]["choice"] + ".", end="")
+        time.sleep(0.6)
 
-        time.sleep(1)
+        print(".", end="")
+        time.sleep(0.2)
+
+        print(".")
+        time.sleep(0.3)
+
+        print()
+        time.sleep(0.2)
+
         bot = random.randint(0, 2)
 
         massive = [
@@ -100,21 +116,23 @@ def main():
 
         i = 0
         for key in massive[player]:
-            a = "" if locale["lang"]["case"] == False else locale["lang"]["case"][bot]
+            a = "" if locale["lang"]["case"] is False else locale["lang"]["case"][bot]
 
             object = locale["objects"][bot]
-            object = object if locale["lang"]["case"] == False else object.lower()
+            object = object if locale["lang"]["case"] is False else object.lower()
 
             if bot == i:
 
                 if i == 0:
-                    print(yellow(" " + locale["results"][key] + "!") + " " + locale["bot"]["have"] + a + " " + object)
+                    message = yellow(" " + locale["results"][key] + "!")
 
                 if i == 1:
-                    print(green(" " + locale["results"][key] + "!") + " " + locale["bot"]["have"] + a + " " + object)
+                    message = green(" " + locale["results"][key] + "!")
 
                 if i == 2:
-                    print(red(" " + locale["results"][key] + "!") + " " + locale["bot"]["have"] + a + " " + object)
+                    message = red(" " + locale["results"][key] + "!")
+
+                print(message + " " + locale["bot"]["have"] + a + " " + object)
 
             i += 1
 

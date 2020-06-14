@@ -1,12 +1,12 @@
 from setuptools import setup
-#from distutils.core import setup
+from kanobu import __version__
 
 with open("README.md", encoding="utf-8") as readme:
     long_description = readme.read()
 
 setup(
     name="kanobu",
-    version="0.1.4",
+    version=__version__,
     author="Daniel Zakharov",
     author_email="daniel734@bk.ru",
     description="Free implementation of the game \"stone, scissors, paper\"",
@@ -29,7 +29,7 @@ setup(
     python_requires=">=3",
     install_requires=[
         "colorama",
-        "cson"
+        "pyyaml"
     ],
     entry_points={
         "console_scripts": [

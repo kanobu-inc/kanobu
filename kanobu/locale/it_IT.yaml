@@ -1,0 +1,22 @@
+lang:
+    name: Italian
+    case: false
+game: Sasso, forbici, carta
+objects:
+    - Sasso
+    - Forbici
+    - Carta
+results:
+    - Vittoria
+    - Perdere
+    - Legare
+bot:
+    choice: "Bot sceglie:"
+    have: Il bot aveva
+message:
+    choice: "Scegliere: "
+    play:
+        request: Continuiamo a giocare?(sì/no)
+        arguments:
+            - s
+            - n

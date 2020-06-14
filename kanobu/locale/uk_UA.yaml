@@ -1,0 +1,22 @@
+lang:
+    name: Українська
+    case: false
+game: Камінь, ножиці, папір
+objects:
+    - Камінь
+    - Ножиці
+    - Папір
+results:
+    - Перемога
+    - Програш
+    - Нічия
+bot:
+    choice: "Результат:"
+    have: "Бот вибрав:"
+message:
+    choice: "Ваш вибір: "
+    play:
+        request: Зіграти знову? (т/н)
+        arguments:
+            - т
+            - н
