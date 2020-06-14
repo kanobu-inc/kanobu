@@ -32,43 +32,37 @@ def main():
 
     args = parser.parse_args()
 
+    log(locale.getdefaultlocale()[0])
+
     path = os.path.dirname(os.path.abspath(__file__))
-
-    if args.version:
-        print(__version__)
-        quit()
-
-    if args.lang is None:
-        lang = locale.getdefaultlocale()[0]
-
-    elif (args.lang == "de_DE" or
-          args.lang == "en_US" or
-          args.lang == "en_UK" or
-          args.lang == "ru_RU" or
-          args.lang == "uk_UA" or
-          args.lang == "em_EM" or
-          args.lang == "it_IT" or
-          args.lang == "fr_FR"):
-
-         lang = args.lang
-
-    else:
-        print(red("[ERROR]") + " Not supported locale")
-        print(yellow("[NOTE]") + " Write locale as ru_RU")
-        quit()
-
-    log(os.path.abspath(__file__))
-
-    log(path)
-
     separator = "/" if os.name == "posix" or os.name == "macos" else "\\"
 
+    if args.version:
+        print("v" + __version__)
+        quit()
+
+    langfile = locale.getdefaultlocale()[0] if args.lang == None else args.lang
+
+    log(str(os.path.exists(path + "/locale/".replace("/", separator) + langfile + ".yaml")))
+
+    log(path + "/locale/".replace("/", separator) + langfile + ".yaml")
+
     try:
-        with open(path + "\\kanobu\\locale\\".replace("\\", separator) + lang + ".yaml", encoding="utf-8") as locale_file:
+        open(path + "/locale/".replace("/", separator) + langfile + ".yaml")
+    except FileNotFoundError:
+        for file in os.listdir(path + "/locale/".replace("/", separator)):
+            # file = file.replace(".yaml", "")
+            log(file)
+            if file[0] + file[1] == langfile[0] + langfile[1]:
+                with open(path + "/locale/".replace("/", separator) + file) as localefile1:
+                    if yaml.safe_load(localefile1.read())["lang"]["default"]:
+                        langfile = file.replace(".yaml", "")
+    try:
+        with open(path + "/kanobu/locale/".replace("/", separator) + langfile + ".yaml", encoding="utf-8") as locale_file:
             locale = yaml.safe_load(locale_file)
             log(locale["lang"]["name"])
     except FileNotFoundError:
-        with open(path + "\\locale\\".replace("\\", separator) + lang + ".yaml", encoding="utf-8") as locale_file:
+        with open(path + "/locale/".replace("/", separator) + langfile + ".yaml", encoding="utf-8") as locale_file:
             locale = yaml.safe_load(locale_file)
             log(locale["lang"]["name"])
 

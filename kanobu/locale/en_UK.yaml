@@ -1,6 +1,7 @@
 lang:
     name: English
     case: false
+    default: false
 game: Rock paper scissors
 objects:
   - Rock
