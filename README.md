@@ -1,16 +1,13 @@
 # 🗿✂️📄 Kanobu
 ## 🗣 Localisation
-| Language         | Status    | Language     | Status    |
-|------------------|-----------|--------------|-----------|
-| 🇷🇺 Russian       | 👍 stable | 🇩🇪 German     | ⚠️ beta    |
-| 🇺🇦 Ukrainian     | 👍 stable | 🇬🇧 English    | 👍 stable  |
-| 🇫🇷 French        | ⚠️ beta   | 🇪🇸 Spanish    | 🗓 plans   |
-| 🇨🇳 Chinese       | ❌ none   | 🇵🇹 Portuguese | 🗓 plans   |
-| 🇵🇱 Polish        | 🗓 plans  | 🇮🇹 Italian    | ⚠️ beta    |
-| 🇹🇷 Turkish       | ❌ none   | 🇸🇦 Arabien    | ❌ none    |
-| 🇰🇷 Korean        | ❌ none   | 🇮🇳 Hindi      | ❌ none    |
-| 🇭🇺 Hungarian     | 🗓 plans  | 😀 Emoji      | ⚠️ beta    |
-| 🇺🇸 English (USA) | ⚠️ beta   | 🇧🇾 Belarus    | ❌ none    |
+| Language         | Status    | Language        | Status    |
+|------------------|-----------|-----------------|-----------|
+| 🇷🇺 Russian       | 👍 stable | 🇩🇪 German        | ⚠️ beta    |
+| 🇺🇦 Ukrainian     | 👍 stable | 🇬🇧 English       | 👍 stable  |
+| 🇫🇷 French        | ⚠️ beta   | 🇪🇸 Spanish       | 🗓 plans   |
+| 🇵🇹 Portuguese    | 🗓 plans  | 🇺🇸 English (USA) | ⚠️ beta    |
+| 🇵🇱 Polish        | 🗓 plans  | 🇮🇹 Italian       | ⚠️ beta    |
+| 🇭🇺 Hungarian     | 🗓 plans  | 😀 Emoji         | ⚠️ beta    |
 
 ## 🚀 Start
 To start, run this code:
