@@ -28,5 +28,3 @@ kanobu
 Simple cross-platform colored terminal text in Python. Support `cmd`, `bash`
 ### 📄 [pyyaml](https://github.com/yaml/pyyaml)
 The next generation YAML parser and emitter for Python.
-## 📰 Trello (ru)
-You can subscribe to [trello](https://trello.com/b/o0ozs1XT) to get information about the new functionality
