@@ -14,14 +14,14 @@ def main():
             leftSpace = " " if left else ""
             rightSpace = " " if right else ""
 
-            print(f"{leftSpace}{yellow("[DEV]")}{rightSpace}{text}")
+            print(f"{leftSpace}{yellow('[DEV]')}{rightSpace}{text}")
 
     def clog(text, left=False, right=True):
         if args.dev:
             leftSpace = " " if left else ""
             rightSpace = " " if right else ""
 
-            return f"{leftSpace}{yellow("[DEV]")}{rightSpace}{text}"
+            return f"{leftSpace}{yellow('[DEV]')}{rightSpace}{text}"
 
     parser = argparse.ArgumentParser()
     parser.add_argument("-d", "--dev", action="store_true", help="Dev mode")
@@ -50,22 +50,22 @@ def main():
             # file = file.replace(".yaml", "")
             log(file)
             if file[0] + file[1] == langfile[0] + langfile[1]:
-                with open(f"{path}{"/locale/".replace("/", separator)}{file}) as localefile1:
+                with open(f"{path}{'/locale/'.replace('/', separator)}{file}") as localefile1:
                     if yaml.safe_load(localefile1.read())["lang"]["default"]:
                         langfile = file.replace(".yaml", "")
     try:
-        with open(f"{path}{"/kanobu/locale/".replace("/", separator)}{langfile}.yaml", encoding="utf-8") as locale_file:
+        with open(f"{path}{'/kanobu/locale/'.replace('/', separator)}{langfile}.yaml", encoding="utf-8") as locale_file:
             locale = yaml.safe_load(locale_file)
             log(locale["lang"]["name"])
     except FileNotFoundError:
-        with open(f"{path}{"/locale/".replace("/", separator)}{langfile}.yaml", encoding="utf-8") as locale_file:
+        with open(f"{path}{'/locale/'.replace('/', separator)}{langfile}.yaml", encoding="utf-8") as locale_file:
             locale = yaml.safe_load(locale_file)
             log(locale["lang"]["name"])
 
     while True:
         logo(locale["game"])
         for key in range(3):
-            print(f"{str(key + 1)}. {locale["objects"][key]}")
+            print(f"{str(key + 1)}. {locale['objects'][key]}")
 
         log(f"args.choice: {str(args.choice)}")
         log(f"args.choice == False: {str(args.choice is False)}")
@@ -77,9 +77,9 @@ def main():
                args.choice == "2" or \
                args.choice == "3":
                 player_input = args.choice
-                print(f"{locale["message"]["choice"]}{args.choice}")
+                print(f"{locale['message']['choice']}{args.choice}")
             else:
-                print(f"{red("[ERROR]")} Use 1, 2, 3 for choice")
+                print(f"{red('[ERROR]')} Use 1, 2, 3 for choice")
                 quit()
 
         while (player_input != "1" and
@@ -90,7 +90,7 @@ def main():
         player = int(player_input) - 1
         print()
 
-        print(f"{locale["bot"]["choice"]}.", end="")
+        print(f"{locale['bot']['choice']}.", end="")
         time.sleep(0.6)
 
         print(".", end="")
@@ -120,15 +120,15 @@ def main():
             if bot == i:
 
                 if i == 0:
-                    message = yellow(f" {locale["results"][key]}!")
+                    message = yellow(f" {locale['results'][key]}!")
 
                 if i == 1:
-                    message = green(f" {locale["results"][key]}!")
+                    message = green(f" {locale['results'][key]}!")
 
                 if i == 2:
-                    message = red(f" {locale["results"][key]}!")
+                    message = red(f" {locale['results'][key]}!")
 
-                print(f"{message} {locale["bot"]["have"]} {a} {object})
+                print(f"{message} {locale['bot']['have']} {a} {object}")
 
             i += 1
 
