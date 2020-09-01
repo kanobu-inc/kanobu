@@ -128,7 +128,7 @@ def main():
                 if i == 2:
                     message = red(f" {locale['results'][key]}!")
 
-                print(f"{message} {locale['bot']['have']} {a} {object}")
+                print(f"{message} {locale['bot']['have']}{a} {object}")
 
             i += 1
 
