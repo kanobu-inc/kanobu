@@ -33,8 +33,8 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "kanobu=kanobu.kanobu:main",
-            "ropasci=kanobu.kanobu:main"
+            "kanobu=kanobu.__main__:main",
+            "ropasci=kanobu.__main__:main"
         ]
     }
 )
