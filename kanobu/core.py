@@ -11,7 +11,19 @@ class Kanobu:
         self.players = players
         self.lang = locale.getdefaultlocale()[0]
         self.version = f"v{__version__}"
+        self.name = "Rock paper scissors"
+        self.objects = ["Rock", "Scissors", "Paper"]
+
+    def logo(self):
+        self.spaces = " " * (len(self.name) + 2)
+
+        print(self.blue(self.spaces))
+        print(self.blue(f" {self.name} "))
+        print(self.blue(self.spaces))
+
+    def blue(self, text):
+        return "\033[44m" + text + "\033[0m"
 
     def rzaka(self):
         for player in self.players:
-            print(f"{player.name} - {player.choice}")
+            print(f"{player.name} - {self.objects[player.choice]}")
