@@ -1,16 +1,13 @@
 # 🗿✂️📄 Kanobu
 ## 🗣 Localisation
-| Language         | Locale    | Status    | Language     | Status    | Locale   |
-|------------------|-----------|-----------|--------------|-----------|----------|
-| 🇷🇺 Russian       | `ru_RU`   | 👍 stable | 🇩🇪 German     | ⚠️ beta    | `de_DE` |
-| 🇺🇦 Ukrainian     | `uk_UA`   | 👍 stable | 🇬🇧 English    | 👍 stable  | `en_UK` |
-| 🇫🇷 French        | `fr_FR`   | ⚠️ beta   | 🇪🇸 Spanish    | 🗓 plans   | `es_ES` |
-| 🇨🇳 Chinese       | `cn_CN`   | ❌ none   | 🇵🇹 Portuguese | 🗓 plans   | `pt_PT` |
-| 🇵🇱 Polish        | `pl_PL`   | 🗓 plans  | 🇮🇹 Italian    | ⚠️ beta    | `it_IT` |
-| 🇹🇷 Turkish       | `tr_TR`   | ❌ none   | 🇸🇦 Arabien    | ❌ none    | `sa_SA` |
-| 🇰🇷 Korean        | `kr_KR`   | ❌ none   | 🇮🇳 Hindi      | ❌ none    | `in_IN` |
-| 🇭🇺 Hungarian     | `hu_HU`   | 🗓 plans  | 😀 Emoji      | ⚠️ beta    | `em_EM` |
-| 🇺🇸 English (USA) | `en_US`   | ⚠️ beta   | 🇧🇾 Belarus    | ❌ none    | `be_BY` |
+| Language         | Status    | Language        | Status    |
+|------------------|-----------|-----------------|-----------|
+| 🇷🇺 Russian       | 👍 stable | 🇩🇪 German        | ⚠️ beta    |
+| 🇺🇦 Ukrainian     | 👍 stable | 🇬🇧 English       | 👍 stable  |
+| 🇫🇷 French        | ⚠️ beta   | 🇪🇸 Spanish       | 🗓 plans   |
+| 🇵🇹 Portuguese    | 🗓 plans  | 🇺🇸 English (USA) | ⚠️ beta    |
+| 🇵🇱 Polish        | 🗓 plans  | 🇮🇹 Italian       | ⚠️ beta    |
+| 🇭🇺 Hungarian     | 🗓 plans  | 😀 Emoji         | ⚠️ beta    |
 
 ## 🚀 Start
 To start, run this code:
@@ -23,7 +20,7 @@ kanobu
 |-----------|----------------------------------------------------------------------------|
 | `dev`     | To get developers functions, and logs about variables and other parameters |
 | `lang`    | For set default language. All languages placed in locale folder            |
-| `version` | To get version                                                             |
+| `version` | option to display the version                                              |
 | `choise`  | For enter choice without `input()`                                         |
 
 ## 🔨 Dependencies
@@ -31,5 +28,3 @@ kanobu
 Simple cross-platform colored terminal text in Python. Support `cmd`, `bash`
 ### 📄 [pyyaml](https://github.com/yaml/pyyaml)
 The next generation YAML parser and emitter for Python.
-## 📰 Trello (ru)
-You can subscribe to [trello](https://trello.com/b/o0ozs1XT) to get information about the new functionality
