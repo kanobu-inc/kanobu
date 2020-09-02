@@ -1,4 +1,5 @@
 import argparse
+from colorama import init
 try:
     from kanobu.core import Kanobu
 
@@ -14,6 +15,8 @@ else:
 
 
 def main():
+    init()
+
     kanobu = Kanobu([Bot("Bot #44566"),
                      Bot("Bot #122311"),
                      Bot("Bot #fffefeefef"),
@@ -31,6 +34,7 @@ def main():
         print(kanobu.version)
         return
 
+    kanobu.logo()
     kanobu.rzaka()
 
 
