@@ -2,12 +2,8 @@ import locale
 
 if __file__ == "__main__":
     from __init__ import __version__
-    from bot import Bot
-    from user import User
 else:
     from kanobu import __version__
-    from kanobu.bot import Bot
-    from kanobu.user import User
 
 
 class Kanobu:
