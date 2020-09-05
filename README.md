@@ -21,7 +21,7 @@ kanobu
 | `dev`     | To get developers functions, and logs about variables and other parameters |
 | `lang`    | For set default language. All languages placed in locale folder            |
 | `version` | option to display the version                                              |
-| `choise`  | For enter choice without `input()`                                         |
+| `choice`  | For enter choice without `input()`                                         |
 
 ## 🔨 Dependencies
 ### 🖌 [colorama](https://github.com/tartley/colorama)
