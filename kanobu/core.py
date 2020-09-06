@@ -39,8 +39,8 @@ class Kanobu:
             print(self.blue(item))
 
     def battle(self, user1, user2):
-        for key in self.massive[user1.choice - 1]:
-            if user2.choice - 1 == self.massive[user1.choice - 1].index(key):
+        for key in self.massive[user1.choice]:
+            if user2.choice == self.massive[user1.choice].index(key):
                 return self.results[key]
 
     def blue(self, text):
@@ -51,4 +51,4 @@ class Kanobu:
 
     def rzaka(self):
         for player in self.players:
-            print(f"{player.name} - {self.objects[player.choice - 1]}")
+            print(f"{player.name} - {self.objects[player.choice]}")
