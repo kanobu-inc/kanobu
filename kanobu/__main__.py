@@ -25,13 +25,13 @@ def main():
                         action="store_true",
                         help="For version")
 
-    kanobu.logo()
-
     args = parser.parse_args()
 
     if args.version:
         print(kanobu.version)
         return
+
+    kanobu.logo()
 
     kanobu.game([Bot("#44566"),
                  Bot("Obama"),
