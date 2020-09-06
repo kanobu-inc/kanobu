@@ -28,7 +28,7 @@ class Kanobu:
             [0, 1, 2]
         ]
         self.results = [
-            self.black(self.green("Win ")),
+            self.black(self.green("Win")) + " ",
             self.redbg("Loss"),
             self.black(self.yellow("Draw"))
         ]
