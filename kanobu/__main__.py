@@ -33,12 +33,11 @@ def main():
         print(kanobu.version)
         return
 
-    kanobu.game([Bot("Bot #44566"),
-                 Bot("Bot #122311"),
-                 Bot("Bot #fffefeefef"),
-                 Bot("Bot Obama")])
+    kanobu.game([Bot("#44566"),
+                 Bot("Obama"),
+                 Bot("KanobuMan"),
+                 Bot("jDan735")])
 
-    print()
     print(kanobu.test())
 
 

@@ -28,9 +28,9 @@ class Kanobu:
             [0, 1, 2]
         ]
         self.results = [
-            "Victory",
-            "Loss",
-            "Draw"
+            self.black(self.green("Win ")),
+            self.redbg("Loss"),
+            self.black(self.yellow("Draw"))
         ]
 
     def game(self, players):
@@ -46,10 +46,35 @@ class Kanobu:
                 return self.results[key]
 
     def blue(self, text):
+        #  \033[1;30m
         return f"\033[34m {text}\033[0m"
 
+    def red(self, text):
+        return f"\033[31m{text}\033[0m"
+
+    def redbg(self, text):
+        return f"\033[41m {text} \033[0m"
+
+    def green(self, text):
+        return f"\033[42m {text} \033[0m"
+
+    def yellow(self, text):
+        return f"\033[43m {text} \033[0m"
+
+    def black(self, text):
+        return f"\033[30m{text}\033[0m"
+
+    def gray(self, text):
+        return f"\033[1;30m{text}\033[0m"
+
     def test(self):
-        return self.battle(*self.players[0:2])
+        print(f"{self.gray('0.')} {self.battle(self.players[0], self.players[-1])} {self.players[0].name} {self.red('vs')} {self.players[3].name}")
+        print(f"{self.gray('1.')} {self.battle(*self.players[0:2])} {self.players[0].name} {self.red('vs')} {self.players[1].name}")
+        print(f"{self.gray('2.')} {self.battle(*self.players[1:3])} {self.players[1].name} {self.red('vs')} {self.players[2].name}")
+        return f"{self.gray('3.')} {self.battle(*self.players[2:4])} {self.players[2].name} {self.red('vs')} {self.players[3].name}"
+
+        # print(f"\033[1;30m0.\033[0m {self.result} {self.players[0].name}")
+        # return f"\033[1;30m1.\033[0m {self.result} {self.players[1].name}"
 
     def rzaka(self):
         for player in self.players:
