@@ -17,10 +17,7 @@ else:
 def main():
     init()
 
-    kanobu = Kanobu([Bot("Bot #44566"),
-                     Bot("Bot #122311"),
-                     Bot("Bot #fffefeefef"),
-                     Bot("Bot Obama")])
+    kanobu = Kanobu()
 
     parser = argparse.ArgumentParser()
     parser.add_argument("-v",
@@ -28,14 +25,21 @@ def main():
                         action="store_true",
                         help="For version")
 
+    kanobu.logo()
+
     args = parser.parse_args()
 
     if args.version:
         print(kanobu.version)
         return
 
-    kanobu.logo()
-    kanobu.rzaka()
+    kanobu.game([Bot("Bot #44566"),
+                 Bot("Bot #122311"),
+                 Bot("Bot #fffefeefef"),
+                 Bot("Bot Obama")])
+
+    print()
+    print(kanobu.test())
 
 
 if __name__ == "__main__":

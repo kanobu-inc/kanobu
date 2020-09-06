@@ -7,23 +7,48 @@ else:
 
 
 class Kanobu:
-    def __init__(self, players):
-        self.players = players
+    def __init__(self):
         self.lang = locale.getdefaultlocale()[0]
         self.version = f"v{__version__}"
         self.name = "Rock paper scissors"
         self.objects = ["Rock", "Scissors", "Paper"]
+        self.kanobu_logo = [
+            " _                     _           ",
+            "| | ____ _ _ __   ___ | |__  _   _ ",
+            "| |/ / _` | '_ \\ / _ \\| '_ \\| | | |",
+            "|   < (_| | | | | (_) | |_) | |_| |",
+            "|_|\\_\\__,_|_| |_|\\___/|_.__/ \\__,_|",
+            "                                   "
+        ]
+        self.massive = [
+            [2, 0, 1],
+            [1, 2, 0],
+            [0, 1, 2]
+        ]
+        self.results = [
+            "Victory",
+            "Loss",
+            "Draw"
+        ]
+
+    def game(self, players):
+        self.players = players
 
     def logo(self):
-        self.spaces = " " * (len(self.name) + 2)
+        for item in self.kanobu_logo:
+            print(self.blue(item))
 
-        print(self.blue(self.spaces))
-        print(self.blue(f" {self.name} "))
-        print(self.blue(self.spaces))
+    def battle(self, user1, user2):
+        for key in self.massive[user1.choice - 1]:
+            if user2.choice - 1 == self.massive[user1.choice - 1].index(key):
+                return self.results[key]
 
     def blue(self, text):
-        return "\033[44m" + text + "\033[0m"
+        return f"\033[34m {text}\033[0m"
+
+    def test(self):
+        return self.battle(*self.players[0:2])
 
     def rzaka(self):
         for player in self.players:
-            print(f"{player.name} - {self.objects[player.choice]}")
+            print(f"{player.name} - {self.objects[player.choice - 1]}")
