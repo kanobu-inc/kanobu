@@ -9,7 +9,9 @@ else:
 class Kanobu:
     def __init__(self):
         self.lang = locale.getdefaultlocale()[0]
-        self.version = f"v{__version__}"
+        self.version = __version__.replace("a", " \033[41m Alpha ") \
+                                  .replace("b", " \033[43m\033[30m Beta ")
+        self.version = f"v{self.version} "
         self.name = "Rock paper scissors"
         self.objects = ["Rock", "Scissors", "Paper"]
         self.kanobu_logo = [
