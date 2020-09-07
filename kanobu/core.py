@@ -32,10 +32,12 @@ class Kanobu:
     def logo(self):
         print(self.blue(__logo__).replace("\n", "\n "))
 
-    def battle(self, user1, user2):
+    def battle(self, user1, user2, index=0):
+        vs = self.red('vs')
         for key in self.massive[user1.choice]:
             if user2.choice == self.massive[user1.choice].index(key):
-                return [self.results[key], [user1, user2]]
+                result = self.results[key]
+                print(f"{index} {result} {user1.name} {vs} {user2.name}")
 
     def blue(self, text):
         #  \033[1;30m
@@ -60,19 +62,11 @@ class Kanobu:
         return f"\033[1;30m{text}\033[0m"
 
     def test(self):
-        self.game_results = [
-            self.battle(*[self.players[0], self.players[-1]]),
-            self.battle(*self.players[0:2]),
-            self.battle(*self.players[1:3]),
-            self.battle(*self.players[2:4])
-        ]
+        self.battle(*self.players[::len(self.players) - 1])
 
-        vs = self.red('vs')
-
-        for result in self.game_results:
-            index = self.gray(self.game_results.index(result))
-            users = result[1:2][0]
-            print(f"{index} {result[0]}  {users[0].name} {vs} {users[1].name}")
+        for player in self.players[0:-1]:
+            ind = self.players.index(player)
+            self.battle(*self.players[ind:ind + 2], ind + 1)
 
     def rzaka(self):
         for player in self.players:
