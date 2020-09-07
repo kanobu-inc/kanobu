@@ -37,6 +37,7 @@ class Kanobu:
         for key in self.massive[user1.choice]:
             if user2.choice == self.massive[user1.choice].index(key):
                 result = self.results[key]
+                index = self.gray(index)
                 print(f"{index} {result} {user1.name} {vs} {user2.name}")
 
     def blue(self, text):
