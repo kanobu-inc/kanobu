@@ -33,9 +33,9 @@ def main():
 
     kanobu.logo()
 
-    kanobu.game([Bot("#44566"),
-                 Bot("Obama"),
-                 Bot("KanobuMan"),
+    kanobu.game([Bot("#445622"),
+                 Bot("Obama21"),
+                 Bot("Kanobu1"),
                  Bot("jDan735")])
 
     kanobu.test()
