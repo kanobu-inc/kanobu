@@ -35,7 +35,7 @@ class Kanobu:
     def battle(self, user1, user2):
         for key in self.massive[user1.choice]:
             if user2.choice == self.massive[user1.choice].index(key):
-                return self.results[key]
+                return [self.results[key], [user1, user2]]
 
     def blue(self, text):
         #  \033[1;30m
@@ -61,22 +61,10 @@ class Kanobu:
 
     def test(self):
         self.game_results = [
-            [
-                self.battle(self.players[0], self.players[-1]),
-                [self.players[0], self.players[-1]]
-            ],
-            [
-                self.battle(*self.players[0:2]),
-                self.players[0:2]
-            ],
-            [
-                self.battle(*self.players[1:3]),
-                self.players[1:3]
-            ],
-            [
-                self.battle(*self.players[2:4]),
-                self.players[2:4]
-            ]
+            self.battle(*[self.players[0], self.players[-1]]),
+            self.battle(*self.players[0:2]),
+            self.battle(*self.players[1:3]),
+            self.battle(*self.players[2:4])
         ]
 
         vs = self.red('vs')
