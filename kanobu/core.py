@@ -62,12 +62,18 @@ class Kanobu:
     def gray(self, text):
         return f"\033[1;30m{text}\033[0m"
 
-    def test(self):
-        self.battle(*self.players[::len(self.players) - 1])
+    def test(self, ind_num=0):
+        if len(self.players) <= 1:
+            print(self.red("Для игры неоходимо хотя бы 2 игрока"))
+            return
+
+        if len(self.players) > 3:
+            self.battle(*self.players[::len(self.players) - 1])
+            ind_num = 1
 
         for player in self.players[0:-1]:
             ind = self.players.index(player)
-            self.battle(*self.players[ind:ind + 2], ind + 1)
+            self.battle(*self.players[ind:ind + 2], ind + ind_num)
 
     def rzaka(self):
         for player in self.players:
