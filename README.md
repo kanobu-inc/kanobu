@@ -1,4 +1,23 @@
 # 🗿✂️📄 Kanobu
+
+Simple game for your family)
+
+## 🚀 Start
+To start, run this code:
+```
+pip install kanobu
+kanobu
+```
+or you can start code without install:
+```
+python __main__.py
+```
+## ⚙️ Options
+| Option    | Information                                                                |
+|-----------|----------------------------------------------------------------------------|
+| `lang`    | For set default language. All languages placed in locale folder            |
+| `version` | option to display the version                                              |
+
 ## 🗣 Localisation
 | Language         | Status    | Language        | Status    |
 |------------------|-----------|-----------------|-----------|
@@ -8,20 +27,6 @@
 | 🇵🇹 Portuguese    | 🗓 plans  | 🇺🇸 English (USA) | ⚠️ beta    |
 | 🇵🇱 Polish        | 🗓 plans  | 🇮🇹 Italian       | ⚠️ beta    |
 | 🇭🇺 Hungarian     | 🗓 plans  | 😀 Emoji         | ⚠️ beta    |
-
-## 🚀 Start
-To start, run this code:
-```
-pip install kanobu
-kanobu
-```
-## ⚙️ Options
-| Option    | Information                                                                |
-|-----------|----------------------------------------------------------------------------|
-| `dev`     | To get developers functions, and logs about variables and other parameters |
-| `lang`    | For set default language. All languages placed in locale folder            |
-| `version` | option to display the version                                              |
-| `choice`  | For enter choice without `input()`                                         |
 
 ## 🔨 Dependencies
 ### 🖌 [colorama](https://github.com/tartley/colorama)
