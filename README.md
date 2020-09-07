@@ -12,11 +12,16 @@ or you can start code without install:
 ```
 python __main__.py
 ```
+
 ## ⚙️ Options
-| Option    | Information                                                                |
-|-----------|----------------------------------------------------------------------------|
-| `lang`    | For set default language. All languages placed in locale folder            |
-| `version` | option to display the version                                              |
+### `lang`
+For set default language. All languages placed in locale folder
+#### 📖 Example
+`kanobu --lang em_EM`
+### `version`
+Display version
+#### 📖 Example
+`kanobu --version`
 
 ## 🗣 Localisation
 | Language         | Status    | Language        | Status    |
