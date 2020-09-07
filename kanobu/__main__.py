@@ -17,15 +17,22 @@ else:
 def main():
     init()
 
-    kanobu = Kanobu()
-
     parser = argparse.ArgumentParser()
     parser.add_argument("-v",
                         "--version",
                         action="store_true",
                         help="For version")
 
+    parser.add_argument("-l",
+                        "--lang",
+                        help="lang")
+
     args = parser.parse_args()
+
+    if args.lang:
+        kanobu = Kanobu(args.lang)
+    else:
+        kanobu = Kanobu()
 
     if args.version:
         print(kanobu.version)
