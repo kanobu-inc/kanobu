@@ -1,5 +1,7 @@
 import locale
 import re
+import yaml
+import os
 
 if __file__ == "__main__":
     from __init__ import __version__, __logo__
@@ -25,9 +27,18 @@ class Kanobu:
             self.redbg("Loss"),
             self.black(self.yellow("Draw"))
         ]
+        self.locale = self.getLocale(self.lang)
+        print(self.locale)
 
     def game(self, players):
         self.players = players
+
+    def getLocale(self, lang):
+        path = os.path.dirname(os.path.abspath(__file__))
+        s = "\\" if os.name == "nt" else "/"
+        with open(f"{path}{s}locale{s}{lang}.yaml",
+                  encoding="utf-8") as locale_file:
+            return yaml.safe_load(locale_file.read())
 
     def logo(self):
         print(self.blue(__logo__).replace("\n", "\n "))
