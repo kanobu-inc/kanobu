@@ -1,9 +1,10 @@
 import locale
+import re
 
 if __file__ == "__main__":
-    from __init__ import __version__
+    from __init__ import __version__, __logo__
 else:
-    from kanobu import __version__
+    from kanobu import __version__, __logo__
 
 
 class Kanobu:
@@ -14,14 +15,6 @@ class Kanobu:
         self.version = f"v{self.version} "
         self.name = "Rock paper scissors"
         self.objects = ["Rock", "Scissors", "Paper"]
-        self.kanobu_logo = [
-            " _                     _           ",
-            "| | ____ _ _ __   ___ | |__  _   _ ",
-            "| |/ / _` | '_ \\ / _ \\| '_ \\| | | |",
-            "|   < (_| | | | | (_) | |_) | |_| |",
-            "|_|\\_\\__,_|_| |_|\\___/|_.__/ \\__,_|",
-            "                                   "
-        ]
         self.massive = [
             [2, 0, 1],
             [1, 2, 0],
@@ -37,8 +30,7 @@ class Kanobu:
         self.players = players
 
     def logo(self):
-        for item in self.kanobu_logo:
-            print(self.blue(item))
+        print(self.blue(__logo__).replace("\n", "\n "))
 
     def battle(self, user1, user2):
         for key in self.massive[user1.choice]:
@@ -68,13 +60,31 @@ class Kanobu:
         return f"\033[1;30m{text}\033[0m"
 
     def test(self):
-        print(f"{self.gray('0.')} {self.battle(self.players[0], self.players[-1])} {self.players[0].name} {self.red('vs')} {self.players[3].name}")
-        print(f"{self.gray('1.')} {self.battle(*self.players[0:2])} {self.players[0].name} {self.red('vs')} {self.players[1].name}")
-        print(f"{self.gray('2.')} {self.battle(*self.players[1:3])} {self.players[1].name} {self.red('vs')} {self.players[2].name}")
-        return f"{self.gray('3.')} {self.battle(*self.players[2:4])} {self.players[2].name} {self.red('vs')} {self.players[3].name}"
+        self.game_results = [
+            [
+                self.battle(self.players[0], self.players[-1]),
+                [self.players[0], self.players[-1]]
+            ],
+            [
+                self.battle(*self.players[0:2]),
+                self.players[0:2]
+            ],
+            [
+                self.battle(*self.players[1:3]),
+                self.players[1:3]
+            ],
+            [
+                self.battle(*self.players[2:4]),
+                self.players[2:4]
+            ]
+        ]
 
-        # print(f"\033[1;30m0.\033[0m {self.result} {self.players[0].name}")
-        # return f"\033[1;30m1.\033[0m {self.result} {self.players[1].name}"
+        vs = self.red('vs')
+
+        for result in self.game_results:
+            index = self.gray(self.game_results.index(result))
+            users = result[1:2][0]
+            print(f"{index} {result[0]}  {users[0].name} {vs} {users[1].name}")
 
     def rzaka(self):
         for player in self.players:
