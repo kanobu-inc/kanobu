@@ -38,7 +38,7 @@ def main():
                  Bot("KanobuMan"),
                  Bot("jDan735")])
 
-    print(kanobu.test())
+    kanobu.test()
 
 
 if __name__ == "__main__":
