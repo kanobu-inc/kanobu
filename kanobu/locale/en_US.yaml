@@ -1,23 +1,6 @@
-lang:
-    name: English (USA)
-    case: false
-    default: true
-game: Rock paper scissors
-objects:
-  - Rock
-  - Scissors
-  - Paper
+lang: English (USA)
+versus: versus
 results:
-   - Victory
-   - Loss
-   - Draw
-bot:
-    choice: "Result:"
-    have: Bot has chosen
-message:
-    choice: "Your choice: "
-    play:
-        request: Play again? (y/n)
-        arguments:
-          - y
-          - n
+    - Victory
+    - Loss
+    - Draw
