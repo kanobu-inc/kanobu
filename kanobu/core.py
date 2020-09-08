@@ -1,5 +1,4 @@
 import locale
-import re
 import yaml
 import os
 from prettytable import PrettyTable
@@ -31,9 +30,6 @@ class Kanobu:
         ]
         self.td = []
         self.th = ['#', 'Result', 'Player1', 'Player2']
-
-    def game(self, players):
-        self.players = players
 
     def getLocale(self, lang):
         path = os.path.dirname(os.path.abspath(__file__))
@@ -70,7 +66,9 @@ class Kanobu:
     def gray(self, text):
         return f"\033[1;30m{text}\033[0m"
 
-    def test(self, ind_num=0):
+    def game(self, players, ind_num=0):
+        self.players = players
+
         if len(self.players) <= 1:
             print(self.red("Для игры неоходимо хотя бы 2 игрока"))
             return
@@ -101,7 +99,3 @@ class Kanobu:
             td_data = td_data[columns:]
 
         print(table)
-
-    def rzaka(self):
-        for player in self.players:
-            print(f"{player.name} - {self.objects[player.choice]}")

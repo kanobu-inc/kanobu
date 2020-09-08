@@ -45,7 +45,6 @@ def main():
                  Bot("Kanobu"),
                  Bot("jDan735")])
 
-    kanobu.test()
     kanobu.showResults()
 
 
