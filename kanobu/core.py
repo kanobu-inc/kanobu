@@ -3,6 +3,12 @@ import yaml
 import os
 from prettytable import PrettyTable
 
+try:
+    from kanobu.color import green, black, blue, red, yellow
+
+except ModuleNotFoundError:
+    from color import green, black, blue, red, yellow
+
 if __file__ == "__main__":
     from __init__ import __version__, __logo__
 else:
@@ -24,9 +30,9 @@ class Kanobu:
             [0, 1, 2]
         ]
         self.results = [
-            self.black(self.green(self.locale["results"][0])),
-            self.red(self.locale["results"][1]),
-            self.black(self.yellow(self.locale["results"][2]))
+            black(green(self.locale["results"][0])),
+            red(self.locale["results"][1]),
+            black(yellow(self.locale["results"][2]))
         ]
         self.td = []
         self.th = ['#', 'Result', 'Player1', 'Player2']
@@ -39,7 +45,7 @@ class Kanobu:
             return yaml.safe_load(locale_file.read())
 
     def logo(self):
-        print(self.blue(__logo__).replace("\n", "\n "))
+        print(blue(__logo__).replace("\n", "\n "))
 
     def battle(self, user1, user2, index=0):
         for key in self.massive[user1.choice]:
@@ -47,30 +53,11 @@ class Kanobu:
                 result = self.results[key]
                 return [index, result, user1.name, user2.name]
 
-    def blue(self, text):
-        #  \033[1;30m
-        return f"\033[34m {text}\033[0m"
-
-    def red(self, text):
-        return f"\033[31m{text}\033[0m"
-
-    def green(self, text):
-        return f"\033[32m{text}\033[0m"
-
-    def yellow(self, text):
-        return f"\033[33m{text}\033[0m"
-
-    def black(self, text):
-        return f"\033[30m{text}\033[0m"
-
-    def gray(self, text):
-        return f"\033[1;30m{text}\033[0m"
-
     def game(self, players, ind_num=0):
         self.players = players
 
         if len(self.players) <= 1:
-            print(self.red("Для игры неоходимо хотя бы 2 игрока"))
+            print(red("Для игры неоходимо хотя бы 2 игрока"))
             return
 
         if len(self.players) > 3:
