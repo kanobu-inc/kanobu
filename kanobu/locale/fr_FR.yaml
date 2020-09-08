@@ -1,5 +1,5 @@
 lang: French
-versus: contre
+headers: ["#", Résultat, Joueur1, Joueur2]
 results:
     - Victoire
     - Perdre

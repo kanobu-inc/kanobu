@@ -86,12 +86,13 @@ class Kanobu:
             self.td.extend(a)
 
     def showResults(self):
-        columns = len(self.th)
+        columns = len(self.locale["headers"])
 
-        table = PrettyTable(self.th)
-        table.align["Result"] = "l"
-        table.align["Player1"] = "l"
-        table.align["Player2"] = "l"
+        table = PrettyTable(self.locale["headers"])
+
+        for name in table.align:
+            table.align[name] = "l"
+
         table.align["#"] = "l"
         td_data = self.td[:]
 

@@ -1,5 +1,5 @@
 lang: Italian
-versus: contro
+headers: ["#", Resultato, Giocatore1, Giocatore2]
 results:
     - Vittoria
     - Perdere

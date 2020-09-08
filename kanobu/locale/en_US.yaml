@@ -1,5 +1,5 @@
 lang: English (USA)
-versus: versus
+headers: ['#', Result, Player1, Player2]
 results:
     - Victory
     - Loss
