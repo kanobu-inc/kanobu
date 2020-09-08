@@ -14,14 +14,10 @@ python __main__.py
 ```
 
 ## ⚙️ Options
-### `lang`
+### `--lang`
 For set default language. All languages placed in locale folder
-#### 📖 Example
-`kanobu --lang em_EM`
-### `version`
-Display version
-#### 📖 Example
-`kanobu --version`
+### `--version`
+Display kanobu version
 
 ## 🗣 Localisation
 | Language         | Status    | Language        | Status    |
