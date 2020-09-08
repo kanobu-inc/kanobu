@@ -40,12 +40,13 @@ def main():
 
     kanobu.logo()
 
-    kanobu.game([Bot("#445622"),
-                 Bot("Obama21"),
-                 Bot("Kanobu1"),
+    kanobu.game([Bot("#4323245622"),
+                 Bot("Obama"),
+                 Bot("Kanobu"),
                  Bot("jDan735")])
 
     kanobu.test()
+    kanobu.showResults()
 
 
 if __name__ == "__main__":

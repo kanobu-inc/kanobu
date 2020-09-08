@@ -29,7 +29,8 @@ setup(
     python_requires=">=3",
     install_requires=[
         "colorama",
-        "pyyaml"
+        "pyyaml",
+        "PrettyTable"
     ],
     entry_points={
         "console_scripts": [
