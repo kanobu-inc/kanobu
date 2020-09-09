@@ -23,6 +23,11 @@ def main():
                         action="store_true",
                         help="For version")
 
+    parser.add_argument("-s",
+                        "--sqlite",
+                        action="store_true",
+                        help="For save to sqlite db")
+
     parser.add_argument("-l",
                         "--lang",
                         help="lang")
@@ -38,12 +43,13 @@ def main():
         print(kanobu.version)
         return
 
-    # kanobu.logo()
-
     kanobu.game([Bot("#4323245622"),
                  Bot("Obama"),
                  Bot("Kanobu"),
                  Bot("jDan735")])
+
+    if args.sqlite:
+        kanobu.writeResultToSQLite()
 
     kanobu.showResults()
 

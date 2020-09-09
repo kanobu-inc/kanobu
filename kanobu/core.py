@@ -1,6 +1,9 @@
 import locale
 import yaml
 import os
+import sqlite3
+import re
+import copy
 from prettytable import PrettyTable
 
 try:
@@ -75,6 +78,39 @@ class Kanobu:
             ind = self.players.index(player)
             a = self.battle(*self.players[ind:ind + 2], ind + ind_num)
             self.td.extend(a)
+
+    def writeResultToSQLite(self):
+        self.td_sq = self.td.copy()
+        conn = sqlite3.connect("result.db")
+        cursor = conn.cursor()
+
+        a = '\"' + '\" text, \"'.join(self.locale['headers']) + '\" text'
+        cursor.execute(f"CREATE TABLE albums ({a})")
+
+        columns = len(self.locale["headers"])
+
+        for index, a in enumerate(self.td_sq):
+
+            self.td_sq[index] = str(a)
+
+            blocklist = ["\033[34m", "\033[31m", "\033[32m", "\033[33m", "\033[30m", "\033[1;30m", "\033[0m"]
+
+            for item in blocklist:
+                self.td_sq[index] = self.td_sq[index].replace(item, "")
+
+        td_data = self.td_sq[:]
+        changes = []
+
+        while td_data:
+            column = tuple(td_data[:columns])
+
+            changes.append(column)
+
+            td_data = td_data[columns:]
+
+        cursor.executemany("INSERT INTO albums VALUES (?,?,?,?)", changes)
+
+        conn.commit()
 
     def showResults(self):
         columns = len(self.locale["headers"])

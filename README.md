@@ -16,6 +16,8 @@ python __main__.py
 ## ⚙️ Options
 ### `--lang`
 For set default language. All languages placed in locale folder
+### `--sqlite`
+For save to sqlite db
 ### `--version`
 Display kanobu version
 
