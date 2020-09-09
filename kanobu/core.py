@@ -57,7 +57,7 @@ class Kanobu:
         self.players = players
 
         if len(self.players) <= 1:
-            print(red("Для игры неоходимо хотя бы 2 игрока"))
+            print(red("Для игры необходимо хотя бы 2 игрока"))
             return
 
         if len(self.players) > 3:
