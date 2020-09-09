@@ -78,7 +78,6 @@ class Kanobu:
         for name in table.align:
             table.align[name] = "l"
 
-        table.align["#"] = "l"
         td_data = self.td[:]
 
         while td_data:
