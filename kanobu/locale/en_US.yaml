@@ -1,5 +1,5 @@
 lang: English (USA)
-headers: ['#', Result, Player1, Player2]
+headers: ['#', Result, Player 1, Player 2]
 results:
     - Victory
     - Loss

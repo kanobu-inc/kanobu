@@ -1,5 +1,5 @@
 lang: Italian
-headers: ["#", Resultato, Giocatore1, Giocatore2]
+headers: ["#", Resultato, Giocatore 1, Giocatore 2]
 results:
     - Vittoria
     - Perdere
