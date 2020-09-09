@@ -38,7 +38,7 @@ def main():
         print(kanobu.version)
         return
 
-    kanobu.logo()
+    # kanobu.logo()
 
     kanobu.game([Bot("#4323245622"),
                  Bot("Obama"),

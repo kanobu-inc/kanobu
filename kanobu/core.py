@@ -44,8 +44,14 @@ class Kanobu:
                   encoding="utf-8") as locale_file:
             return yaml.safe_load(locale_file.read())
 
-    def logo(self):
-        print(blue(__logo__).replace("\n", "\n "))
+    def logo(self, len1=0):
+        if len1 == 0:
+            len1 = len(str(PrettyTable(self.locale["headers"])).split("\n")[0])
+        len2 = len(__logo__.split("\n")[2])
+
+        num = len1 - len2
+        padding = int(num / 2) * ' '
+        print(padding[:-1] + blue(__logo__).replace("\n", f"\n{padding}"))
 
     def battle(self, user1, user2, index=0):
         for key in self.massive[user1.choice]:
@@ -83,5 +89,7 @@ class Kanobu:
         while td_data:
             table.add_row(td_data[:columns])
             td_data = td_data[columns:]
+
+        self.logo(len(str(table).split("\n")[0]))
 
         print(table)
