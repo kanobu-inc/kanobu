@@ -2,8 +2,6 @@ import locale
 import yaml
 import os
 import sqlite3
-import re
-import copy
 from prettytable import PrettyTable
 
 try:
