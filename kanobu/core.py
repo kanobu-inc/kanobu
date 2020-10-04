@@ -91,7 +91,15 @@ class Kanobu:
 
             self.td_sq[index] = str(a)
 
-            blocklist = ["\033[34m", "\033[31m", "\033[32m", "\033[33m", "\033[30m", "\033[1;30m", "\033[0m"]
+            blocklist = [
+                "\033[34m",
+                "\033[31m",
+                "\033[32m",
+                "\033[33m",
+                "\033[30m",
+                "\033[1;30m",
+                "\033[0m"
+            ]
 
             for item in blocklist:
                 self.td_sq[index] = self.td_sq[index].replace(item, "")
