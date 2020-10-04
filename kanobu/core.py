@@ -20,7 +20,7 @@ class Kanobu:
     def __init__(self, lang=False):
         self.lang = lang if lang else locale.getdefaultlocale()[0] or "en_US"
         self.version = __version__.replace("a", " \033[41m Alpha ") \
-                                  .replace("b", " \033[43m\033[30m Beta ")
+                                  .replace("b", " \033[43m\033[30m Beta ") + " \033[0m"
         self.version = f"v{self.version} "
         self.locale = self.getLocale(self.lang)
         self.name = "Rock paper scissors"
