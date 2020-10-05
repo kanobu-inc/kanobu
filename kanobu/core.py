@@ -16,6 +16,18 @@ else:
     from kanobu import __version__, __logo__
 
 
+class Event:
+    def __init__(self, name, localename):
+        self.colors = {
+            "win": "\033[30m\033[32m",
+            "loss": "\033[31m",
+            "draw": "\033[30m\033[33m"
+        }
+        self.end = "\033[0m"
+        self.tname = localename
+        self.name = f"{self.colors[name]}{localename}{self.end}"
+
+
 class Kanobu:
     def __init__(self, lang=False):
         self.lang = lang if lang else locale.getdefaultlocale()[0] or "en_US"
@@ -31,9 +43,9 @@ class Kanobu:
             [0, 1, 2]
         ]
         self.results = [
-            black(green(self.locale["results"][0])),
-            red(self.locale["results"][1]),
-            black(yellow(self.locale["results"][2]))
+            Event("win", self.locale["results"][0]),
+            Event("loss", self.locale["results"][1]),
+            Event("draw", self.locale["results"][2])
         ]
         self.td = []
         self.th = ['#', 'Result', 'Player1', 'Player2']
@@ -58,7 +70,7 @@ class Kanobu:
         for key in self.massive[user1.choice]:
             if user2.choice == self.massive[user1.choice].index(key):
                 result = self.results[key]
-                return [index, result, user1.name, user2.name]
+                return [index, result, user1, user2]
 
     def game(self, players, ind_num=0):
         self.players = players
@@ -78,7 +90,17 @@ class Kanobu:
             self.td.extend(a)
 
     def writeResultToSQLite(self):
-        self.td_sq = self.td.copy()
+        self.td_copy = self.td.copy()
+        for index, item in enumerate(self.td_copy):
+            if type(item).__name__ == "Event":
+                self.td_copy[index] = item.tname
+
+            if type(item).__name__ == "Bot":
+                self.td_copy[index] = item.tname
+
+            if type(item).__name__ == "User":
+                self.td_copy[index] = item.name
+
         conn = sqlite3.connect("result.db")
         cursor = conn.cursor()
 
@@ -87,24 +109,7 @@ class Kanobu:
 
         columns = len(self.locale["headers"])
 
-        for index, a in enumerate(self.td_sq):
-
-            self.td_sq[index] = str(a)
-
-            blocklist = [
-                "\033[34m",
-                "\033[31m",
-                "\033[32m",
-                "\033[33m",
-                "\033[30m",
-                "\033[1;30m",
-                "\033[0m"
-            ]
-
-            for item in blocklist:
-                self.td_sq[index] = self.td_sq[index].replace(item, "")
-
-        td_data = self.td_sq[:]
+        td_data = self.td_copy[:]
         changes = []
 
         while td_data:
@@ -123,8 +128,16 @@ class Kanobu:
 
         table = PrettyTable(self.locale["headers"])
 
-        for name in table.align:
-            table.align[name] = "l"
+        table.align = "l"
+
+        for index, item in enumerate(self.td):
+            if type(item).__name__ == "Event":
+                self.td[index] = item.name
+
+            if (type(item).__name__ == "Bot" or
+                type(item).__name__ == "Event" or
+                type(item).__name__ == "User"):
+                self.td[index] = item.name
 
         td_data = self.td[:]
 
