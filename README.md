@@ -29,7 +29,7 @@ Display kanobu version
 | 🇫🇷 French        | ⚠️ beta   | 🇪🇸 Spanish       | 🗓 plans   |
 | 🇵🇹 Portuguese    | 🗓 plans  | 🇺🇸 English (USA) | ⚠️ beta    |
 | 🇵🇱 Polish        | 🗓 plans  | 🇮🇹 Italian       | ⚠️ beta    |
-| 🇭🇺 Hungarian     | 🗓 plans  | 😀 Emoji         | ⚠️ beta    |
+| 🇮🇷 Farsi         | ⚠️ beta:  | 😀 Emoji         | ⚠️ beta    |
 
 ## 🔨 Dependencies
 ### 🖌 [colorama](https://github.com/tartley/colorama)
