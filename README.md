@@ -21,7 +21,7 @@ For save to sqlite db
 ### `--version`
 Display kanobu version
 
-## 🗣 Localisation
+## 🗣 Localization
 | Language         | Status    | Language        | Status    |
 |------------------|-----------|-----------------|-----------|
 | 🇷🇺 Russian       | 👍 stable | 🇩🇪 German        | ⚠️ beta    |
@@ -29,7 +29,7 @@ Display kanobu version
 | 🇫🇷 French        | ⚠️ beta   | 🇪🇸 Spanish       | 🗓 plans   |
 | 🇵🇹 Portuguese    | 🗓 plans  | 🇺🇸 English (USA) | ⚠️ beta    |
 | 🇵🇱 Polish        | 🗓 plans  | 🇮🇹 Italian       | ⚠️ beta    |
-| 🇮🇷 Farsi         | ⚠️ beta:  | 😀 Emoji         | ⚠️ beta    |
+| 🇮🇷 Farsi         | ⚠️ beta  | 😀 Emoji         | ⚠️ beta    |
 
 ## 🔨 Dependencies
 ### 🖌 [colorama](https://github.com/tartley/colorama)
