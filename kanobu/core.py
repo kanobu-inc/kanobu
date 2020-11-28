@@ -28,12 +28,21 @@ class Event:
         self.name = f"{self.colors[name]}{localename}{self.end}"
 
 
+class Version:
+    def __init__(self, ver):
+        self.ver = ver
+        self.fver = self._format(ver)
+
+    def _format(self, ver):
+        return ver.replace("a", " \033[41m Alpha ") \
+                  .replace("b", " \033[43m\033[30m Beta ") + " \033[0m"
+
+
 class Kanobu:
     def __init__(self, lang=False):
         self.lang = lang if lang else locale.getdefaultlocale()[0] or "en_US"
-        self.version = __version__.replace("a", " \033[41m Alpha ") \
-                                  .replace("b", " \033[43m\033[30m Beta ") + " \033[0m"
-        self.version = f"v{self.version} "
+        self.VERSION = Version(__version__)
+        self.version = f"v{self.VERSION.fver} "
         self.locale = self.getLocale(self.lang)
         self.name = "Rock paper scissors"
         self.objects = ["Rock", "Scissors", "Paper"]
@@ -48,8 +57,9 @@ class Kanobu:
             Event("draw", self.locale["results"][2])
         ]
         self.td = []
-        self.th = ['#', 'Result', 'Player1', 'Player2']
+        self.th = ['Result', 'Player1', 'Player2']
 
+    """Get localization file as python object"""
     def getLocale(self, lang):
         path = os.path.dirname(os.path.abspath(__file__))
         s = "\\" if os.name == "nt" else "/"
@@ -57,6 +67,7 @@ class Kanobu:
                   encoding="utf-8") as locale_file:
             return yaml.safe_load(locale_file.read())
 
+    """Show kanobu logo (connected to table width)"""
     def logo(self, len1=0):
         if len1 == 0:
             len1 = len(str(PrettyTable(self.locale["headers"])).split("\n")[0])
@@ -66,12 +77,14 @@ class Kanobu:
         padding = int(num / 2) * ' '
         print(padding[:-1] + blue(__logo__).replace("\n", f"\n{padding}"))
 
-    def battle(self, user1, user2, index=0):
+    """Return result of user's fight"""
+    def battle(self, user1, user2):
         for key in self.massive[user1.choice]:
             if user2.choice == self.massive[user1.choice].index(key):
                 result = self.results[key]
-                return [index, result, user1, user2]
+                return [result, user1, user2]
 
+    """Func when run all games processes"""
     def game(self, players, ind_num=0):
         self.players = players
 
@@ -82,13 +95,13 @@ class Kanobu:
         if len(self.players) > 3:
             a = self.battle(*self.players[::len(self.players) - 1])
             self.td.extend(a)
-            ind_num = 1
 
         for player in self.players[0:-1]:
             ind = self.players.index(player)
-            a = self.battle(*self.players[ind:ind + 2], ind + ind_num)
+            a = self.battle(*self.players[ind:ind + 2])
             self.td.extend(a)
 
+    """Write result to SQLite database"""
     def writeResultToSQLite(self):
         self.td_copy = self.td.copy()
         for index, item in enumerate(self.td_copy):
@@ -105,24 +118,29 @@ class Kanobu:
         cursor = conn.cursor()
 
         a = '\"' + '\" text, \"'.join(self.locale['headers']) + '\" text'
-        cursor.execute(f"CREATE TABLE albums ({a})")
+        cursor.execute(f"CREATE TABLE results ({a})")
 
         columns = len(self.locale["headers"])
 
         td_data = self.td_copy[:]
         changes = []
+        i = 1
 
         while td_data:
-            column = tuple(td_data[:columns])
+            column = td_data[:columns-1]
+            column.insert(0, i)
 
+            column = tuple(column)
             changes.append(column)
 
-            td_data = td_data[columns:]
+            i += 1
+            td_data = td_data[columns-1:]
 
-        cursor.executemany("INSERT INTO albums VALUES (?,?,?,?)", changes)
+        cursor.executemany("INSERT INTO results VALUES (?,?,?,?)", changes)
 
         conn.commit()
 
+    """Show results in table"""
     def showResults(self):
         columns = len(self.locale["headers"])
 
@@ -141,9 +159,14 @@ class Kanobu:
 
         td_data = self.td[:]
 
+        i = 1
+
         while td_data:
-            table.add_row(td_data[:columns])
-            td_data = td_data[columns:]
+            row = td_data[:columns-1]
+            row.insert(0, i)
+            table.add_row(row)
+            i += 1
+            td_data = td_data[columns-1:]
 
         self.logo(len(str(table).split("\n")[0]))
 
