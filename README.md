@@ -1,4 +1,6 @@
 # 🗿✂️📄 Kanobu
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FjDan735%2Fkanobu.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FjDan735%2Fkanobu?ref=badge_shield)
+
 
 Simple game for your family)
 
@@ -36,3 +38,7 @@ Display kanobu version
 Simple cross-platform colored terminal text in Python. Support `cmd`, `bash`
 ### 📄 [pyyaml](https://github.com/yaml/pyyaml)
 The next generation YAML parser and emitter for Python.
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FjDan735%2Fkanobu.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FjDan735%2Fkanobu?ref=badge_large)
